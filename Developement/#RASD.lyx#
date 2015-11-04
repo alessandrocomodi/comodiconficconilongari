@@ -814,9 +814,8 @@ Mark, who has registered and is a user of myTaxiService needs a taxi ride.
  After doing that he is redirected to the login page and so he fills the
  form with his e-mail address, the one he used to register to the service,
  and his password.
- If the informations are correct he is able to access to the home page of
- the application, otherwise an error message appears and he is asked to
- try again.
+ If the informations are correct he is able to make a taxi request, otherwise
+ an error message will appear.
  
 \end_layout
 
