@@ -924,17 +924,54 @@ Use Case Diagram
 \end_layout
 
 \begin_layout Standard
-Below is presented the Use Case Diagram which represent all the main use
+Below is presented the Use Case Diagram which represents all the main use
  cases of the application.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Graphics
 	filename Immagine.png
+	display false
 	width 100line%
-	height 80pheight%
+	height 100pheight%
 	keepAspectRatio
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Class Diagram
+\end_layout
+
+\begin_layout Standard
+Below is presented the Class Diagram which represents the main classes of
+ the application
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ClassDiagram1.png
+	display false
+	width 100line%
+	height 100pheight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
