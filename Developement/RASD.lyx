@@ -2336,8 +2336,95 @@ Non-functional Requirements
 \end_layout
 
 \begin_layout Standard
-In this section all the non-functional requirements of the application are
- described.
+This section contains some of the main non functional requirements that
+ the Software to be should fulfil in order to provide a proper quality of
+ the service and guarantee an accurate stream of operations.
+\end_layout
+
+\begin_layout Subsection
+User friendliness
+\end_layout
+
+\begin_layout Standard
+Due to the wide target of people for whom the application is intended ,
+ it should present a very intuitive and effective user interface .
+ Also old aged people and people with a poor knowledge of web or mobile
+ applications should understand how to move inside the application and get
+ a taxi.
+ 
+\end_layout
+
+\begin_layout Subsection
+Portability
+\end_layout
+
+\begin_layout Standard
+The mobile application should be available for all major mobile devices
+ with different kind of hardware and software.
+ Also the web application should be used via all the main browser(e.g.
+ : Chrome,Mozilla) with no kind of restriction of operative system or hardware
+ features.
+ 
+\end_layout
+
+\begin_layout Subsection
+Maintainability & Reliability
+\end_layout
+
+\begin_layout Standard
+The application need high ease of maintenance due to the fact that it has
+ normally to be operative every day of the week , 7/7 days, and every hour,
+ 24/24.
+ Some exceptions could happen, but any necessary maintenance has to be very
+ rare.
+ 
+\end_layout
+
+\begin_layout Subsection
+Availability & Performance
+\end_layout
+
+\begin_layout Enumerate
+The system should be reactive and able to manage at least 1’000 of concurrent
+ and simultaneous operations.
+ Because of this and in order to avoid traffic overloading more than one
+ server will be needed.
+ 
+\end_layout
+
+\begin_layout Enumerate
+At least 90% of the operations have to be completed in less than 100 ms.
+\end_layout
+
+\begin_layout Enumerate
+In order to process all the information there is a need to have at least
+ 24 gigabyte of RAM.
+\end_layout
+
+\begin_layout Enumerate
+All the produced data has to be stored, so the servers must have at least
+ 10 terabytes.
+ 
+\end_layout
+
+\begin_layout Subsection
+Security
+\end_layout
+
+\begin_layout Enumerate
+The security of the system is guaranteed in different ways.
+ A user is identified by the tuple email, password, number of id document,
+ whereas a taxi driver is identified by the tuple email,code of company,
+ number of license.
+ No user has to be able to insert data into the database but all the details
+ of the various rides (like the starting and destination point, user, taxi
+ driver…) are stored and used to compute the distribution of the taxis.
+ 
+\end_layout
+
+\begin_layout Enumerate
+passwords associated to users must be cripted in order to avoid security
+ failures of the system.
 \end_layout
 
 \begin_layout Chapter
