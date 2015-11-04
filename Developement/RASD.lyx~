@@ -27,7 +27,6 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement !h
 \paperfontsize default
 \spacing onehalf
 \use_hyperref false
@@ -930,43 +929,12 @@ Below is presented the Use Case Diagram which represents all the main use
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Graphics
-	filename images/useCaseDiagram.png
+	filename Immagine.png
 	display false
 	width 100line%
 	height 100pheight%
 	keepAspectRatio
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Use Case Diagram for myTaxiService
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \end_inset
 
@@ -990,43 +958,12 @@ Below is presented the Class Diagram which represents the main classes of
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Graphics
-	filename images/classDiagram.png
+	filename ClassDiagram1.png
 	display false
 	width 100line%
 	height 100pheight%
 	keepAspectRatio
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Class Diagram for myTaxiService
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \end_inset
 
@@ -1181,17 +1118,6 @@ the e-mail is already present in the system so it is not anymore unique
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
