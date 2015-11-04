@@ -11,10 +11,10 @@
 \language english
 \language_package default
 \inputencoding utf8
-\fontencoding T1
-\font_roman default
+\fontencoding global
+\font_roman lmodern
 \font_sans default
-\font_typewriter courier
+\font_typewriter default
 \font_math auto
 \font_default_family default
 \use_non_tex_fonts false
@@ -52,6 +52,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\fontcolor #000000
 \index Index
 \shortcut idx
 \color #008000
@@ -1049,7 +1050,7 @@ Registration
 <lyxtabular version="3" rows="5" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top">
-<column alignment="left" valignment="top" width="80line%">
+<column alignment="left" valignment="top" width="60line%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
@@ -1245,7 +1246,7 @@ Login
 <lyxtabular version="3" rows="5" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top">
-<column alignment="left" valignment="top" width="80line%">
+<column alignment="left" valignment="top" width="60line%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
@@ -1431,7 +1432,7 @@ Taxi request
 <lyxtabular version="3" rows="5" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top">
-<column alignment="left" valignment="top" width="80line%">
+<column alignment="left" valignment="top" width="60line%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
@@ -1623,7 +1624,7 @@ Check for taxi status
 <lyxtabular version="3" rows="5" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top">
-<column alignment="left" valignment="top" width="80line%">
+<column alignment="left" valignment="top" width="60line%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
@@ -1806,7 +1807,7 @@ Taxi reservation
 <lyxtabular version="3" rows="5" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top">
-<column alignment="left" valignment="top" width="80line%">
+<column alignment="left" valignment="top" width="60line%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
@@ -2002,7 +2003,7 @@ Delete a reservation
 <lyxtabular version="3" rows="5" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top">
-<column alignment="left" valignment="top" width="80line%">
+<column alignment="left" valignment="top" width="60line%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
@@ -2203,7 +2204,7 @@ Share a taxi
 <lyxtabular version="3" rows="5" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top">
-<column alignment="left" valignment="top" width="80line%">
+<column alignment="left" valignment="top" width="60line%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
@@ -2398,7 +2399,7 @@ Taxi driver availability
 <lyxtabular version="3" rows="5" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top">
-<column alignment="left" valignment="top" width="80line%">
+<column alignment="left" valignment="top" width="60line%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
@@ -2533,7 +2534,7 @@ Taxi driver confirmation
 <lyxtabular version="3" rows="5" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top">
-<column alignment="left" valignment="top" width="80line%">
+<column alignment="left" valignment="top" width="60line%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text

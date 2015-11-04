@@ -11,10 +11,10 @@
 \language english
 \language_package default
 \inputencoding utf8
-\fontencoding T1
-\font_roman default
+\fontencoding global
+\font_roman lmodern
 \font_sans default
-\font_typewriter courier
+\font_typewriter default
 \font_math auto
 \font_default_family default
 \use_non_tex_fonts false
@@ -27,7 +27,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement !h
+\float_placement H
 \paperfontsize default
 \spacing onehalf
 \use_hyperref false
@@ -52,6 +52,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\fontcolor #000000
 \index Index
 \shortcut idx
 \color #008000
@@ -1185,7 +1186,7 @@ the e-mail is already present in the system so it is not anymore unique
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1206,7 +1207,6 @@ status open
 	filename images/sequenceDiagrams/registration.png
 	display false
 	width 100line%
-	height 100pheight%
 
 \end_inset
 
@@ -1231,7 +1231,7 @@ Sequence diagram for the registration
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1368,7 +1368,7 @@ the input password or e-mail are incorrect and the guest cannot log in
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1389,8 +1389,6 @@ status open
 	filename images/sequenceDiagrams/login.png
 	display false
 	width 100line%
-	height 100pheight%
-	keepAspectRatio
 
 \end_inset
 
@@ -1419,7 +1417,7 @@ Sequence diagram for login
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1562,7 +1560,7 @@ y made the request is refused
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1583,8 +1581,6 @@ status open
 	filename images/sequenceDiagrams/taxiRequest.png
 	display false
 	width 100line%
-	height 100pheight%
-	keepAspectRatio
 
 \end_inset
 
@@ -1613,7 +1609,7 @@ Sequence diagram for taxi request
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1741,6 +1737,62 @@ none
 </row>
 </lyxtabular>
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/sequenceDiagrams/checkTaxiStatus.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Check taxi status sequence diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1881,6 +1933,62 @@ the reservation time coincides with another reservation made in a previous
 </row>
 </lyxtabular>
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/sequenceDiagrams/reservation.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Taxi reservation sequence diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -2031,6 +2139,62 @@ none
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/sequenceDiagrams/reservationDelete.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Delete a reservation sequence diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Share a taxi
 \end_layout
@@ -2165,6 +2329,62 @@ there is no user departing from the same zone or going in the same direction.
 </row>
 </lyxtabular>
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/sequenceDiagrams/taxiSharing.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Share a taxi sequence diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
