@@ -29,7 +29,7 @@
 \index_command default
 \float_placement H
 \paperfontsize default
-\spacing onehalf
+\spacing double
 \use_hyperref true
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
@@ -66,7 +66,7 @@
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 4cm
+\leftmargin 5cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent

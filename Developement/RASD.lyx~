@@ -30,7 +30,16 @@
 \float_placement H
 \paperfontsize default
 \spacing onehalf
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry true
 \use_package amsmath 1
@@ -252,9 +261,8 @@ The application to be implemented is going to be mostly independent and
  self-contained although it will have to be supported by some external systems.
  The management of the taxi queues and the allocation of the taxi for each
  passenger is done automatically by the application.
- myTaxiService is going to be developed as both a Mobile and Web application
- and so, in order to correctly work, it will need to be integrated with
- Internet.
+ MTS is going to be developed as both a Mobile and Web application and so,
+ in order to correctly work, it will need to be integrated with Internet.
  Another integration is the use of GPS for the navigation system of each
  taxi.
  It is going to be used to gather information about the position of the
@@ -410,89 +418,45 @@ All the possible ambiguities and the needed hypotheses are clarified in
  this section and explained with all their reasons.
 \end_layout
 
-\begin_layout Subsection
-User identification
+\begin_layout Enumerate
+Guests who want to register are provided with an ID document in order to
+ register to the system.
 \end_layout
 
-\begin_layout Standard
-In order to avoid possible multiple accounts or any kind of abuse of the
- application, user must register themselves with a valid email address and
- also must attach a valid identification document.
- Both of them are unique by definition.
+\begin_layout Enumerate
+The system is able to check wether an ID document is valid or not in order
+ to verify the authenticity of the guest.
 \end_layout
 
-\begin_layout Subsection
-Taxi Driver identification
+\begin_layout Enumerate
+All the taxi drivers are provided with a smartphone in order to receive
+ the taxi requests.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
+It is assumed that the city is a metropolis and the potential customers
+ are around 2-3 millions.
+\end_layout
+
+\begin_layout Enumerate
+The taxi companies that will use MTS have available a number of taxis that
+ can cover the whole city requests.
+\end_layout
+
+\begin_layout Enumerate
 The mobile application for drivers isn’t available on marketplaces, this
  owing to prevent from any kind of cyberattack or illegal use.
  Every taxi company provides the application and a unique identification
  code, among all companies, to each driver.
 \end_layout
 
-\begin_layout Subsection
-Taxi zones
-\end_layout
-
-\begin_layout Standard
+\begin_layout Enumerate
 The city is divided in zones, each one with two square kilometers of extension
  approximately.
 \end_layout
 
-\begin_layout Subsection
-Taxi availability
-\end_layout
-
-\begin_layout Standard
-When a driver declare his availability to the system, he is in the queue
- and can answer to a request in every moment.
- The driver may also not give the disposability and the system doesn’t consider
- him as in a zone queue.
-\end_layout
-
-\begin_layout Subsection
-Reservation
-\end_layout
-
-\begin_layout Standard
-The taxi driver chosen by the system for a reservation is always an available
- taxi .
-\end_layout
-
-\begin_layout Subsection
-Sharing option
-\end_layout
-
-\begin_layout Standard
-All shared rides are notified to the driver, who is informed of all destination
- he has to reach, and also all passengers.
-\end_layout
-
-\begin_layout Subsection
-Sharing decline
-\end_layout
-
-\begin_layout Standard
-When a user receives a confirmation of a shared ride, he can't delete the
- call anymore.
-\end_layout
-
-\begin_layout Subsection
-GPS correctness
-\end_layout
-
-\begin_layout Standard
+\begin_layout Enumerate
 All the GPS data incoming from different devices are 100% correct.
-\end_layout
-
-\begin_layout Subsection
-Starting point correctness
-\end_layout
-
-\begin_layout Standard
-The starting point inserted from a user is always correct.
 \end_layout
 
 \begin_layout Chapter
@@ -809,7 +773,7 @@ Login
 \end_layout
 
 \begin_layout Standard
-Mark, who has registered and is a user of myTaxiService needs a taxi ride.
+Mark, who has registered and is a user of MTS needs a taxi ride.
  He starts the application and clicks on the “login” button.
  After doing that he is redirected to the login page and so he fills the
  form with his e-mail address, the one he used to register to the service,
@@ -825,14 +789,13 @@ Taxi request
 \end_layout
 
 \begin_layout Standard
-A user wants to request a taxi from the central station.
- He clicks on the “request” button and fills the form, with the starting
- and destination point.
+Robert wants to request a taxi to pick him up at the central station.
+ He logs in the applicaiton and clicks on the “request” button and fills
+ the form, with the starting and destination point.
  He then waits for the confirmation.
  When a taxi driver confirms the request a notification with the taxi ID,
  a code that has to be shown to the driver and the approximate waiting time
- is sent to the user.
- 
+ is sent to Robert.He then walks to the place where the taxi will arrive.
 \end_layout
 
 \begin_layout Subsection
@@ -840,11 +803,13 @@ Check for taxi status
 \end_layout
 
 \begin_layout Standard
-A user has just requested a taxi and a driver confirmed the ride.
- The user wants to know how much time is left until the arrival of the taxi
- and the position of this one.
- He then clicks on the “check taxi status” button and selects the request
- he made.
+Sarah has just requested a taxi and a driver confirmed the ride.
+ She wants to know how much time is left until the arrival of the taxi and
+ the position of this one.
+ Sarah then clicks on the “check taxi status” button and selects the request
+ she made.
+ Sarah is able to see the position of the taxi and she can be sure that
+ the vehicle will arrive on time.
 \end_layout
 
 \begin_layout Subsection
@@ -852,14 +817,16 @@ Taxi reservation
 \end_layout
 
 \begin_layout Standard
-A user wants to reserve a taxi for the next day.
- He clicks on the “reserve” button and then completes the form with the
- time and date, the starting point and the final destination.
+Philip wants to reserve a taxi for the next day in order to reach the airport.
+ He logs in the application and clicks on the “reserve” button and then
+ completes the form with the time and date, the starting point and the final
+ destination.
  The confirmation of the insertion of the ride in the system is sent to
- the user.
+ Philip.
  The system manages the reservation as a taxi request, allocating a taxi
  ten minutes before the meeting time.
- From this point the execution flow equal to a taxi request.
+ The following day Philip goes at the meeting point and finds the taxi waiting
+ for him to take him to the airport.
  
 \end_layout
 
@@ -868,12 +835,15 @@ Delete reservation
 \end_layout
 
 \begin_layout Standard
-A user has made a reservation for a taxi for the next day.
- He then decides to delete his reservations.
- He goes to the home page of the app, clicks on the “check taxi status”
- then he selects the reservation he made for the next day and deletes it
- and it is removed from the system.
- 
+Tom has made a reservation for a taxi for the next day.
+ He then decides to delete his reservation because a friend of his goes
+ in the same direction with his own car.
+ He goes then to the home page of the application, clicks on the “check
+ taxi status” then he selects the reservation he made for the next day and
+ deletes it.
+ The system removes it from the database and no taxi will be requested to
+ be at the meeting point the next day.
+ If Tom changes his mind again he has to make another reservation.
 \end_layout
 
 \begin_layout Subsection
@@ -881,13 +851,15 @@ Share a taxi
 \end_layout
 
 \begin_layout Standard
-A first user wants to reach a destination and a second user’s destination
- is on the road of the first one.
- Both of them decided to use the possibility of sharing the taxi.
- The system calculates the road and the fee percentage for each passengers
- and sends a notification to the first available taxi driver.
+Bruce wants to reach the pub to meet his friends and Richard wants to go
+ to the cinema, which is situated near the pub in which Bruce wants to go.
+ Both of them decide to use MTS.
+ Bruce and Richard decide to share the ride.
+ The system calculates the road and the fee percentage for each user and
+ sends a notification to the first available taxi driver.
  A confirmation arrives to both the users who shares the ride.
- 
+ And that's how Batman and Robin knew each other and joined in order to
+ save Gotham city many times.
 \end_layout
 
 \begin_layout Subsection
@@ -895,10 +867,10 @@ Taxi driver availability
 \end_layout
 
 \begin_layout Standard
-A taxi driver has just completed a ride and he is able to receive other
- requests.
- He then goes to the availability options page on the application and sets
- himself as 
+Julia, who is a taxi driver, has just completed a ride and she is able to
+ receive other requests.
+ She then goes to the availability options page on the application and sets
+ herself as 
 \begin_inset Quotes eld
 \end_inset
 
@@ -907,6 +879,8 @@ available
 \end_inset
 
 .
+ From now the Julia is inserted in a queue of taxis until she accepts another
+ ride.
 \end_layout
 
 \begin_layout Subsection
@@ -914,11 +888,26 @@ Taxi driver confirmation
 \end_layout
 
 \begin_layout Standard
-A taxi driver receives a request for a ride.
- If he can take the request he confirms his availability and a notification
- is sent to the passenger, otherwise the system tries with the next taxi
- in the queue and so on.
+Ross, a taxi driver, receives a request for a ride.
+ Even if he is about to end his working turn he decide to accept the ride
+ and take the passenger to his destination.
+ Ross then clicks on 
+\begin_inset Quotes eld
+\end_inset
+
+confirm ride
+\begin_inset Quotes erd
+\end_inset
+
+ button and reaches the meeting point.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -966,7 +955,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Use Case Diagram for myTaxiService
+Use Case Diagram for MTS
 \end_layout
 
 \end_inset
@@ -1026,7 +1015,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Class Diagram for myTaxiService
+Class Diagram for MTS
 \end_layout
 
 \end_inset
