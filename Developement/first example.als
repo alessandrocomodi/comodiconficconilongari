@@ -11,45 +11,44 @@ sig Text{
 
 }
 abstract sig Boolean{}
-sig True extends Boolean{}
-sig False extends Boolean{}
+one sig True extends Boolean{}
+one sig False extends Boolean{}
 //definition of a generic person
 abstract sig Person{
-  idDoc: one Int,
+  idDoc: Int,
   currentPosition: lone Position,
-}{
-  idDoc >0
 }
 //definition of a user
 sig User extends Person{
-  email: one Text,
-  password: one Text,
+  email: Text,
+  password: Text,
 }
 //definition of a taxi driver
-sig TaxiDriver extends Person{
-  taxiCode: one Text,
-  taxiLicense: one Text,
-  seatsAvailable: one Int,
+sig Driver extends Person{
+  code: Int,
+  license: Int,
+  seatsAvailable: Int,
   availability: one Boolean,
 }{
-  seatsAvailable > 1
+	availability = True =>( some p:Position | p = currentPosition)
 }
 //definition of a ride
 sig Ride{
-  driver: one TaxiDriver,
+  driver: one Driver,
   date: one Int,
   startingPoint: lone Position,
-  destinationPoint: some Position,
+  destinations: some Position,
   users: some User,
   numberOfPeple: one Int,
   isShared: one Boolean,
   startingTime: one Int,
   requests: set Request,
 }{
-  date > 0
-  startingPoint != destinationPoint
+ date > 0
+  startingPoint != destinations
   numberOfPeple >= 1
   startingTime > 0
+  isShared = False => #users = 1
 }
 //
 sig Request{
@@ -59,10 +58,10 @@ sig Request{
   user: User,
   people: Int,
   acceptSharing: Boolean,
-  time: Int,
+  requestTime: Int,
 }{
   date > 0
-  time > 0
+  requestTime > 0
   people >= 1
   startingPoint != destinationPoint
 }
@@ -74,12 +73,11 @@ sig Reservation extends Request{
 }{
   prenotationTime >0
   prenotationDate >0
-  prenotationTime - time >= 2
 }
 //definition of the queue
 sig Queue{
   zone: one Text,
-  drivers: set TaxiDriver,
+  drivers: some Driver,
 }
 //definition of the queue manager
 one sig QueueManager{
@@ -90,51 +88,65 @@ one sig QueueManager{
 //*************CONSTRAINTS**********//
 
 //uniqueness of the user by the email
-fact uniquenessUser{
-  no u1,u2 :User | (u1 != u2 and (u1.email = u2.email))
+fact uniqueUser{
+  no u1,u2 :User | (u1 != u2 and u1.email = u2.email)
 }
-//uniqueness of the taxi driver by the double taxicode, taxi license
-fact uniquenessTaxiDriver{
-  no t1,t2 :TaxiDriver | (t1 != t2 and (t1.taxiCode = t2.taxiCode or t1.taxiLicense = t2.taxiLicense))
+//uniqueness of the taxi driver by the double code, taxi license
+fact uniqueDriver{
+  no t1,t2 :Driver | (t1 != t2 and (t1.code = t2.code or t1.license = t2.license))
 }
-//difference between prenotation Int and starting Int of a reservation greater than or euqal to  two hours
-fact timeLimitPrenotation{
-  all r:Reservation | ((r.prenotationTime - r.time<= 2) and r.prenotationDate = r.date) or r.date <= r.prenotationDate
-}
+
 //number of available seats >= number of passengers
 fact rightPassengersNumber{
   all r: Ride | r.driver.seatsAvailable >= r.numberOfPeple
 }
-//shared ride has at least two users
-fact sharedRide{
-  all r: Ride | ((#r.users > 1 or #r.destinationPoint >1 )=> r.isShared = True )
-}
-//
+//no ride without destinations or user
 fact existanceDestinationAndUser{
-  no r:Ride | #r.destinationPoint = 0 or #r.users = 0
+  all r:Ride | #r.destinations > 0 and #r.users > 0
 }
-//
+//constraints on availability
 fact taxiAvailbleInQueue{
-  all t: TaxiDriver | (t.availability = True) <=>(some q: Queue | t in q.drivers) and (t.availability = False) <=> (no q: Queue | t in q.drivers)
+  all t: Driver | ((t.availability = True) <=>(isInQueue[t]) ) or ((t.availability = False) <=> (!isInQueue[t]))
 }
-//
-fact driversAtMostOneQueue {
-  all t: TaxiDriver | (lone q: Queue | t in q.drivers)
-}
-
-//
-fact sharedSeats{
-  all r : Ride | sum r.requests.people < r.driver.seatsAvailable
-}
-//
+//all queue are managed by the queue manager
 fact queuesAllStoredInManager{
   all q:Queue | q in QueueManager.queues
 }
+//each driver is in at most in one queue
+fact driversAtMostOneQueue {
+  all t: Driver | (lone q: Queue | t in q.drivers)
+}
+//shared ride has at least two users
+fact sharedRide{
+  all r: Ride | ((r.isShared = True ) =>(#r.users > 1 and #r.destinations >= 1) )
+}
+//shared ride has at least two requests
+fact sharingAtLeastTwoRequest{
+  all r: Ride | r.isShared = True => (some r1,r2: Request | r1 in r.requests and r2 in r.requests)
+}
+//number of total required seats of a shared ride has to be lesser or equal than the available seats
+fact sharedSeats{
+  all r : Ride | r.isShared = True => ((sum r1:r.requests | r1.people) <= r.driver.seatsAvailable)
+}
+//shared ride only for who accepts sharing
+fact sharingCorresponding{
+	all r: Request | r.acceptSharing = False => (no ride:Ride | r in ride.requests)
+}
+//all request at most in one ride
+fact atMostOneRideForRequests{
+	all r: Request | lone ride: Ride | r in ride.requests
+}
+/*
 
+//there isn't any ride with same time and date completed by the same driver
+fact noSimultaneousRideBySameDriver{
+  no r1,r2:Ride |r1.driver = r2.driver and  r1.date = r2.date and r1.startingTime = r2.startingTime 
+}
+
+*/
 //********** FUNCTIONS ************
 
 //*****ASSERTIONS************
-
 
 //
 assert moreUsersIfShared{
@@ -143,26 +155,44 @@ assert moreUsersIfShared{
 check moreUsersIfShared for 4
 //
 assert noTaxiNoQueue{
-  no t:TaxiDriver | t.availability = True and (no q: Queue | t in q.drivers)
+  no t:Driver | t.availability = True and (no q: Queue | t in q.drivers)
 }
 
 check noTaxiNoQueue for 4
 
 
 //****PREDICATES
+// if the driver is in a queue
+pred isInQueue[t:Driver]{
+ some q:Queue | t in q.drivers
+}
+//same time and date of a request
+pred isSimultaneous[r1: Request, r2: Request]{
+  r1.date = r2.date and r1.requestTime = r2.requestTime
+}
+//same starting point of a request and same destination point
+pred isSameStartAndDestination[r1: Request, r2: Request]{
+  r1.startingPoint = r2.startingPoint and r1.destinationPoint = r2.destinationPoint
+}
 
 pred show(){
   #User > 1
   #Ride > 1
-  #TaxiDriver > 1
-  #Position > 1
+  #Driver > 1
   #Request > 1
   #Queue > 1
-  #QueueManager = 1
   #Reservation >= 1
   #{r: Ride | r.isShared = True} > 1
 }
 
-pred show1(){}
-run show for 3
-run show1 for 2
+pred bello(){
+	#User>1
+	#Driver=3
+	#Queue>1
+	#Reservation = 1
+	#Request >1
+	  #{r: Ride | r.isShared = True} = 1
+}
+
+run show for 5
+run bello for 10
