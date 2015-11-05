@@ -530,6 +530,11 @@ If a guest tries to login with wrong credentials he is requested to retry
 \end_layout
 
 \begin_layout Enumerate
+Guests has to fill the form with their personal data: name, surname, address
+ and phone number.
+\end_layout
+
+\begin_layout Enumerate
 During the registration guests have to give a valid email address to which
  will be sent a confirmation email and a valid ID document code to demonstrate
  their legitimacy.
@@ -780,7 +785,8 @@ Scenarios
 
 \begin_layout Standard
 In this section are described some of the most frequent use case of the
- application, divided in several different scenarios.
+ application, divided in several different scenarios which will help the
+ reader in understeanding the above specific requirements.
 \end_layout
 
 \begin_layout Subsection
@@ -788,12 +794,14 @@ Registration
 \end_layout
 
 \begin_layout Standard
-A person has just downloaded the application from the app store and he would
+John has just downloaded the application from the app store and he would
  like to make use of it.
- He decides to register to it and so he clicks on the “sign up” button.
- A registration form shows up and he fills it with his personal data.
+ He decides to register to the system in order to take advantage of the
+ offered services and so he clicks on the “sign up” button.
+ A registration form shows up and he fills it with all the necessary data.
  If the information are correct he becomes a new user of the product, otherwise
  he is redirected to the home page with an error notification.
+ From now on John can log in the system with his credentials.
 \end_layout
 
 \begin_layout Subsection
@@ -801,13 +809,14 @@ Login
 \end_layout
 
 \begin_layout Standard
-A user of myTaxiService needs a taxi ride.
+Mark, who has registered and is a user of myTaxiService needs a taxi ride.
  He starts the application and clicks on the “login” button.
  After doing that he is redirected to the login page and so he fills the
  form with his e-mail address, the one he used to register to the service,
  and his password.
- If the informations are correct he is able to make a taxi request, otherwise
- an error message will appear.
+ If the informations are correct he is able to access to the home page of
+ the application, otherwise an error message appears and he is asked to
+ try again.
  
 \end_layout
 
