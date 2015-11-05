@@ -44,11 +44,11 @@ sig Ride{
   startingTime: one Int,
   requests: set Request,
 }{
- date > 0
+  date > 0
   startingPoint != destinations
   numberOfPeple >= 1
   startingTime > 0
-  isShared = False => #users = 1
+  isShared = False => #users = 1 and #destinations = 1 and #requests = 1
 }
 //
 sig Request{
@@ -122,7 +122,7 @@ fact sharedRide{
 }
 //shared ride has at least two requests
 fact sharingAtLeastTwoRequest{
-  all r: Ride | r.isShared = True => (some r1,r2: Request | r1 in r.requests and r2 in r.requests)
+  all r: Ride | r.isShared = True => (some r1,r2: Request | r1 in r.requests and r2 in r.requests) and #r.requests >= 2
 }
 //number of total required seats of a shared ride has to be lesser or equal than the available seats
 fact sharedSeats{
@@ -136,13 +136,15 @@ fact sharingCorresponding{
 fact atMostOneRideForRequests{
 	all r: Request | lone ride: Ride | r in ride.requests
 }
-/*
-
 //there isn't any ride with same time and date completed by the same driver
 fact noSimultaneousRideBySameDriver{
-  no r1,r2:Ride |r1.driver = r2.driver and  r1.date = r2.date and r1.startingTime = r2.startingTime 
+  no r1,r2:Ride | r1!=r2 and r1.driver = r2.driver and  r1.date = r2.date and r1.startingTime = r2.startingTime 
 }
-
+//starting point comes from the first request
+fact determineStartingPoint{
+	all r: Ride | some r1: r.requests | (no r2 : r.requests | r2.requestTime > r1.requestTime) => r.startingPoint = r1.startingPoint
+}
+/*
 */
 //********** FUNCTIONS ************
 
@@ -175,6 +177,8 @@ pred isSameStartAndDestination[r1: Request, r2: Request]{
   r1.startingPoint = r2.startingPoint and r1.destinationPoint = r2.destinationPoint
 }
 
+pred display(){}
+
 pred show(){
   #User > 1
   #Ride > 1
@@ -191,8 +195,15 @@ pred bello(){
 	#Queue>1
 	#Reservation = 1
 	#Request >1
-	  #{r: Ride | r.isShared = True} = 1
+	#{r: Ride | r.isShared = True} = 1
 }
-
+pred noShare(){
+#{r: Ride | r.isShared = True} = 0
+	#User>3
+	#Driver>1
+	#Request >3
+}
+run display for 4
 run show for 5
 run bello for 10
+run noShare for 7
