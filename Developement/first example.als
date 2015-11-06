@@ -1,4 +1,4 @@
-//********CLASS DEFINITIONS********
+//************CLASS DEFINITIONS************//
 
 //assuming date as an int dd-mm-yy
 //assuming Int as an int hour,minute
@@ -7,22 +7,27 @@ sig Position{
   x: one Int,
   y: one Int,
 }
-sig Text{
 
-}
+sig Text{}
+
 abstract sig Boolean{}
+
 one sig True extends Boolean{}
+
 one sig False extends Boolean{}
+
 //definition of a generic person
 abstract sig Person{
   idDoc: Int,
   currentPosition: lone Position,
 }
+
 //definition of a user
 sig User extends Person{
   email: Text,
   password: Text,
 }
+
 //definition of a taxi driver
 sig Driver extends Person{
   code: Int,
@@ -45,12 +50,13 @@ sig Ride{
   requests: set Request,
 }{
   date > 0
-  startingPoint != destinations
+  all d: destinations | d != startingPoint
   numberOfPeple >= 1
   startingTime > 0
   isShared = False => #users = 1 and #destinations = 1 and #requests = 1
 }
-//
+
+//definition of a request
 sig Request{
   date: Int,
   startingPoint: Position,
@@ -65,32 +71,34 @@ sig Request{
   people >= 1
   startingPoint != destinationPoint
 }
+
 //definition of the reservation
 sig Reservation extends Request{
   prenotationTime: one Int,
   prenotationDate: one Int,
-
 }{
   prenotationTime >0
   prenotationDate >0
 }
+
 //definition of the queue
 sig Queue{
   zone: one Text,
   drivers: some Driver,
 }
+
 //definition of the queue manager
 one sig QueueManager{
   queues: set Queue,
-
 }
 
-//*************CONSTRAINTS**********//
+//************CONSTRAINTS************//
 
 //uniqueness of the user by the email
 fact uniqueUser{
   no u1,u2 :User | (u1 != u2 and u1.email = u2.email)
 }
+
 //uniqueness of the taxi driver by the double code, taxi license
 fact uniqueDriver{
   no t1,t2 :Driver | (t1 != t2 and (t1.code = t2.code or t1.license = t2.license))
@@ -100,62 +108,81 @@ fact uniqueDriver{
 fact rightPassengersNumber{
   all r: Ride | r.driver.seatsAvailable >= r.numberOfPeple
 }
+
 //no ride without destinations or user
 fact existanceDestinationAndUser{
   all r:Ride | #r.destinations > 0 and #r.users > 0
 }
+
 //constraints on availability
 fact taxiAvailbleInQueue{
   all t: Driver | ((t.availability = True) <=>(isInQueue[t]) ) or ((t.availability = False) <=> (!isInQueue[t]))
 }
+
 //all queue are managed by the queue manager
 fact queuesAllStoredInManager{
   all q:Queue | q in QueueManager.queues
 }
+
 //each driver is in at most in one queue
 fact driversAtMostOneQueue {
   all t: Driver | (lone q: Queue | t in q.drivers)
 }
+
 //shared ride has at least two users
 fact sharedRide{
-  all r: Ride | ((r.isShared = True ) =>(#r.users > 1 and #r.destinations >= 1) )
+  all r: Ride | ((r.isShared = True ) =>(#r.users > 1 and #r.destinations >= 1 ) )
 }
+//no existance of user in a ride that hasn't request
+fact allUserOneRequestEachRide{
+	all r :Ride | (all u: r.users | one r1: r.requests| r1.user = u )
+}
+
 //shared ride has at least two requests
 fact sharingAtLeastTwoRequest{
-  all r: Ride | r.isShared = True => (some r1,r2: Request | r1 in r.requests and r2 in r.requests) and #r.requests >= 2
+  all r: Ride | r.isShared = True => (some r1,r2: r.requests | r1.user != r2.user) and #r.requests >= 2
 }
+
 //number of total required seats of a shared ride has to be lesser or equal than the available seats
 fact sharedSeats{
   all r : Ride | r.isShared = True => ((sum r1:r.requests | r1.people) <= r.driver.seatsAvailable)
 }
+
 //shared ride only for who accepts sharing
 fact sharingCorresponding{
-	all r: Request | r.acceptSharing = False => (no ride:Ride | r in ride.requests)
+	all r: Request | r.acceptSharing = False => (no ride:Ride | r in ride.requests and ride.isShared = True)
 }
+
 //all request at most in one ride
 fact atMostOneRideForRequests{
 	all r: Request | lone ride: Ride | r in ride.requests
 }
+
 //there isn't any ride with same time and date completed by the same driver
 fact noSimultaneousRideBySameDriver{
   no r1,r2:Ride | r1!=r2 and r1.driver = r2.driver and  r1.date = r2.date and r1.startingTime = r2.startingTime 
 }
+
 //starting point comes from the first request
 fact determineStartingPoint{
 	all r: Ride | some r1: r.requests | (no r2 : r.requests | r2.requestTime > r1.requestTime) => r.startingPoint = r1.startingPoint
 }
-/*
-*/
-//********** FUNCTIONS ************
 
-//*****ASSERTIONS************
+// shared ride same starting point from requests
+fact sharedOneStartingPoint{
+	all r: Ride |  r.isShared = True => (all r1,r2: r.requests | r1.startingPoint = r2.startingPoint)
+}
 
-//
+//************ASSERTIONS************//
+
+// check on the shared ride by more than one user
 assert moreUsersIfShared{
   no r: Ride | #r.users>1 and r.isShared = False
 }
+
 check moreUsersIfShared for 4
-//
+
+//all available driver must be in a queue
 assert noTaxiNoQueue{
   no t:Driver | t.availability = True and (no q: Queue | t in q.drivers)
 }
@@ -163,15 +190,19 @@ assert noTaxiNoQueue{
 check noTaxiNoQueue for 4
 
 
-//****PREDICATES
+//************PREDICATES************//
+
+
 // if the driver is in a queue
 pred isInQueue[t:Driver]{
  some q:Queue | t in q.drivers
 }
+
 //same time and date of a request
 pred isSimultaneous[r1: Request, r2: Request]{
   r1.date = r2.date and r1.requestTime = r2.requestTime
 }
+
 //same starting point of a request and same destination point
 pred isSameStartAndDestination[r1: Request, r2: Request]{
   r1.startingPoint = r2.startingPoint and r1.destinationPoint = r2.destinationPoint
@@ -195,15 +226,27 @@ pred exactlyOneSharing(){
 	#Queue>1
 	#Reservation = 1
 	#Request >1
+	#Request < 4
 	#{r: Ride | r.isShared = True} = 1
 }
+
 pred noShare(){
-#{r: Ride | r.isShared = True} = 0
-	#User>3
-	#Driver>1
-	#Request >3
+	#{r: Ride | r.isShared = True} = 0
+	#User > 1
+	#Driver > 1
+	#Driver < 4
+	#Request > 1
+	#Ride > 1
+	no u: User |  (all r: Request | u in r.user)
+	#{r1: Request | r1.acceptSharing = True } = 0
+	#Position >1
+	#Position < 5
 }
+
 run display for 4
+
 run show for 5
+
 run exactlyOneSharing for 10
+
 run noShare for 7
