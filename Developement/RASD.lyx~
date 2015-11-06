@@ -85,7 +85,34 @@
 \begin_body
 
 \begin_layout Title
-myTaxiService
+Requirement Analysis and Specification Document
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[1cm]
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/logo-polimi.png
+	display false
+	width 60line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Alessandro Comodi, Davide Conficconi, Stefano Longari
 \end_layout
 
 \begin_layout Standard
@@ -106,7 +133,7 @@ Introduction
 This section aims to show in general terms the purpose and a brief description
  of the project, with the integration of a glossary which will be useful
  for the better understanding of the terms.
- 
+ The software to be developed is called myTaxiService.
 \end_layout
 
 \begin_layout Section
@@ -418,44 +445,148 @@ All the possible ambiguities and the needed hypotheses are clarified in
  this section and explained with all their reasons.
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Description
+[A1] 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{[A1]}{}
+\end_layout
+
+\end_inset
+
 Guests who want to register are provided with an ID document in order to
  register to the system.
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Description
+[A2] 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{[A2]}{}
+\end_layout
+
+\end_inset
+
 The system is able to check wether an ID document is valid or not in order
  to verify the authenticity of the guest.
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Description
+[A3] 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{[A3]}{}
+\end_layout
+
+\end_inset
+
 All the taxi drivers are provided with a smartphone in order to receive
  the taxi requests.
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Description
+[A4] 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{[A4]}{}
+\end_layout
+
+\end_inset
+
 It is assumed that the city is a metropolis and the potential customers
  are around 2-3 millions.
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Description
+[A5] 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{[A5]}{}
+\end_layout
+
+\end_inset
+
 The taxi companies that will use MTS have available a number of taxis that
  can cover the whole city requests.
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Description
+[A6] 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{[A6]}{}
+\end_layout
+
+\end_inset
+
 The mobile application for drivers isn’t available on marketplaces, this
  owing to prevent from any kind of cyberattack or illegal use.
  Every taxi company provides the application and a unique identification
  code, among all companies, to each driver.
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Description
+[A7] 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{[A7]}{}
+\end_layout
+
+\end_inset
+
 The city is divided in zones, each one with two square kilometers of extension
  approximately.
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Description
+[A8] 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{[A8]}{}
+\end_layout
+
+\end_inset
+
 All the GPS data incoming from different devices are 100% correct.
 \end_layout
 
@@ -478,38 +609,38 @@ In this section are described the main functional requirement.
 \end_layout
 
 \begin_layout Subsection
-Registration and login
+Registration and login 
 \end_layout
 
-\begin_layout Enumerate
-Guests, who are not yet logged in the system, are only able to login or
- to register.
+\begin_layout Description
+[R1.1] Guests, who are not yet logged in the system, are only able to login
+ or to register.
  
 \end_layout
 
-\begin_layout Enumerate
-If a guest tries to login with wrong credentials he is requested to retry
- and sent to the previous page.
+\begin_layout Description
+[R1.2] If a guest tries to login with wrong credentials he is requested to
+ retry and sent to the previous page.
  
 \end_layout
 
-\begin_layout Enumerate
-Guests has to fill the form with their personal data: name, surname, address
- and phone number.
+\begin_layout Description
+[R1.3] Guests has to fill the form with their personal data: name, surname,
+ address and phone number.
 \end_layout
 
-\begin_layout Enumerate
-During the registration guests have to give a valid email address to which
- will be sent a confirmation email and a valid ID document code to demonstrate
- their legitimacy.
+\begin_layout Description
+[R1.4] During the registration guests have to give a valid email address
+ to which will be sent a confirmation email and a valid ID document code
+ to demonstrate their legitimacy.
  The system checks for the authenticity of the document before accepting
  the registration.
  
 \end_layout
 
-\begin_layout Enumerate
-When registering a guest has also to insert a password with at least eight
- characters.
+\begin_layout Description
+[R1.5] When registering a guest has also to insert a password with at least
+ eight characters.
  
 \end_layout
 
@@ -517,31 +648,32 @@ When registering a guest has also to insert a password with at least eight
 Profile management
 \end_layout
 
-\begin_layout Enumerate
-Users are able to add and modify their email, password, telephone number,
- home address.
+\begin_layout Description
+[R2.1] Users are able to add and modify their email, password, telephone
+ number, home address.
  
 \end_layout
 
-\begin_layout Enumerate
-Users can change the ID document code but it has to be verified by the system.
+\begin_layout Description
+[R2.2] Users can change the ID document code but it has to be verified by
+ the system.
  
 \end_layout
 
-\begin_layout Enumerate
-If the users modifies the password, the system must ask for the old password
- in order to verify the authenticity of the user.
+\begin_layout Description
+[R2.3] If the users modifies the password, the system must ask for the old
+ password in order to verify the authenticity of the user.
  This to increment the security of the application.
  
 \end_layout
 
-\begin_layout Enumerate
-Users cannot add more than one home address and ID document code.
+\begin_layout Description
+[R2.4] Users cannot add more than one home address and ID document code.
  
 \end_layout
 
-\begin_layout Enumerate
-Users are not able to modify their name and surname.
+\begin_layout Description
+[R2.5] Users are not able to modify their name and surname.
  
 \end_layout
 
@@ -549,33 +681,35 @@ Users are not able to modify their name and surname.
 User side taxi request
 \end_layout
 
-\begin_layout Enumerate
-If users give non existing starting or destination addresses the system
+\begin_layout Description
+[R3.1] If users give non existing starting or destination addresses the system
  notifies them to try again and refuses the request.
  
 \end_layout
 
-\begin_layout Enumerate
-If the user has already a pending request and asks for another one he is
- notified that the second request will not be forwarded and it is refused.
+\begin_layout Description
+[R3.2] If the user has already a pending request and asks for another one
+ he is notified that the second request will not be forwarded and it is
+ refused.
  
 \end_layout
 
-\begin_layout Enumerate
-If the request is vaild the user is asked to wait for the first taxi that
- will accept it.
+\begin_layout Description
+[R3.3] If the request is vaild the user is asked to wait for the first taxi
+ that will accept it.
  
 \end_layout
 
-\begin_layout Enumerate
-When a taxi driver accepts the request, the user is given the taxi ID and
- a code to show to the driver in order to avoid other passengers to take
- the incoming taxi.
+\begin_layout Description
+[R3.4] When a taxi driver accepts the request, the user is given the taxi
+ ID and a code to show to the driver in order to avoid other passengers
+ to take the incoming taxi.
  
 \end_layout
 
-\begin_layout Enumerate
-A user is able to see where the taxi is and the expected time for its arrival.
+\begin_layout Description
+[R3.5] A user is able to see where the taxi is and the expected time for
+ its arrival.
  
 \end_layout
 
@@ -583,15 +717,15 @@ A user is able to see where the taxi is and the expected time for its arrival.
 User side taxi sharing
 \end_layout
 
-\begin_layout Enumerate
-While sending a request or reserving a taxi the user must have the possibility
- to share the ride with other users.
+\begin_layout Description
+[R4.1] While sending a request or reserving a taxi the user must have the
+ possibility to share the ride with other users.
  
 \end_layout
 
-\begin_layout Enumerate
-If the ride will be shared the client is advised from the system with a
- notification containing the percentage of the owed fee.
+\begin_layout Description
+[R4.2] If the ride will be shared the client is advised from the system with
+ a notification containing the percentage of the owed fee.
  
 \end_layout
 
@@ -599,48 +733,49 @@ If the ride will be shared the client is advised from the system with a
 User side taxi reservation
 \end_layout
 
-\begin_layout Enumerate
-To reserve a taxi the user must provide date and time of the reservaiton.
+\begin_layout Description
+[R5.1] To reserve a taxi the user must provide date and time of the reservaiton.
  
 \end_layout
 
-\begin_layout Enumerate
-Date must be greater or equal than the one in which the reservation is submitted.
+\begin_layout Description
+[R5.2] Date must be greater or equal than the one in which the reservation
+ is submitted.
  
 \end_layout
 
-\begin_layout Enumerate
-Users cannot reserve in the last two hours before the ride and so those
- hours must be unavailable.
+\begin_layout Description
+[R5.3] Users cannot reserve in the last two hours before the ride and so
+ those hours must be unavailable.
  
 \end_layout
 
-\begin_layout Enumerate
-Users must insert starting point and final destination of the ride.
+\begin_layout Description
+[R5.4] Users must insert starting point and final destination of the ride.
  
 \end_layout
 
-\begin_layout Enumerate
-If users give non existing starting or destination addresses the system
+\begin_layout Description
+[R5.5] If users give non existing starting or destination addresses the system
  notifies them to try again and refuses the reservation.
  
 \end_layout
 
-\begin_layout Enumerate
-As the system can compute the average time of the reserved ride, if the
- user asks for another ride for a time in which he should still be on the
- first one it is refused and the client notified.
+\begin_layout Description
+[R5.6] As the system can compute the average time of the reserved ride, if
+ the user asks for another ride for a time in which he should still be on
+ the first one it is refused and the client notified.
  
 \end_layout
 
-\begin_layout Enumerate
-Users are notified when the taxi driver accepts the ride.
+\begin_layout Description
+[R5.7] Users are notified when the taxi driver accepts the ride.
  
 \end_layout
 
-\begin_layout Enumerate
-Users are able to cancel the reservation until 10 minutes before the meeting
- time, not later.
+\begin_layout Description
+[R5.8] Users are able to cancel the reservation until 10 minutes before the
+ meeting time, not later.
  
 \end_layout
 
@@ -648,54 +783,54 @@ Users are able to cancel the reservation until 10 minutes before the meeting
 Taxi driver side notifications
 \end_layout
 
-\begin_layout Enumerate
-Drivers are told by the system in which zone they are working.
+\begin_layout Description
+[R6.1] Drivers are told by the system in which zone they are working.
  
 \end_layout
 
-\begin_layout Enumerate
-When ready, the drivers have to alert the system that they're waiting for
- a request and are put in the queue of their zone.
+\begin_layout Description
+[R6.2] When ready, the drivers have to alert the system that they're waiting
+ for a request and are put in the queue of their zone.
  
 \end_layout
 
-\begin_layout Enumerate
-When a request arrives to the system the chosen taxi driver is given the
- informations about the ride.
+\begin_layout Description
+[R6.3] When a request arrives to the system the chosen taxi driver is given
+ the informations about the ride.
  
 \end_layout
 
-\begin_layout Enumerate
-A taxi driver has to answer the request within 1 minute otherwise the reqeust
- passes to the next available taxi and he is moved to the bottom of the
- queue.
+\begin_layout Description
+[R6.4] A taxi driver has to answer the request within 1 minute otherwise
+ the reqeust passes to the next available taxi and he is moved to the bottom
+ of the queue.
  
 \end_layout
 
-\begin_layout Enumerate
-Taxi drivers must be informed if a ride is shared or not.
+\begin_layout Description
+[R6.5] Taxi drivers must be informed if a ride is shared or not.
  
 \end_layout
 
-\begin_layout Enumerate
-If a ride is a reservation the taxi driver must be informed of it.
+\begin_layout Description
+[R6.6] If a ride is a reservation the taxi driver must be informed of it.
  
 \end_layout
 
-\begin_layout Enumerate
-Taxi drivers can only see their own requests and reservations and not the
- ones of other drivers.
+\begin_layout Description
+[R6.7] Taxi drivers can only see their own requests and reservations and
+ not the ones of other drivers.
  
 \end_layout
 
-\begin_layout Enumerate
-Taxi drivers cannot receive notification while busy.
+\begin_layout Description
+[R6.8] Taxi drivers cannot receive notification while busy.
  
 \end_layout
 
-\begin_layout Enumerate
-When a taxi driver accepts a request he is automatically set to busy and
- removed from the queue.
+\begin_layout Description
+[R6.9] When a taxi driver accepts a request he is automatically set to busy
+ and removed from the queue.
  
 \end_layout
 
@@ -703,42 +838,42 @@ When a taxi driver accepts a request he is automatically set to busy and
 Queue Management
 \end_layout
 
-\begin_layout Enumerate
-The city is divided in virtual zones.
+\begin_layout Description
+[R7.1] The city is divided in virtual zones.
  
 \end_layout
 
-\begin_layout Enumerate
-Each zone of the city has an assigned queue of taxis.
+\begin_layout Description
+[R7.2] Each zone of the city has an assigned queue of taxis.
  
 \end_layout
 
-\begin_layout Enumerate
-The system is aware of the positions of each taxi through GPS informations.
+\begin_layout Description
+[R7.3] The system is aware of the positions of each taxi through GPS informations.
  
 \end_layout
 
-\begin_layout Enumerate
-The system knows the statistic distribution of taxi requests and reservations
- in the city and analyzes through these data the optimal division of taxis
- in different zones.
+\begin_layout Description
+[R7.4] The system knows the statistic distribution of taxi requests and reservati
+ons in the city and analyzes through these data the optimal division of
+ taxis in different zones.
  
 \end_layout
 
-\begin_layout Enumerate
-When a taxi driver becomes available he is informed by the system in which
- zone he is assigned.
+\begin_layout Description
+[R7.5] When a taxi driver becomes available he is informed by the system
+ in which zone he is assigned.
  
 \end_layout
 
-\begin_layout Enumerate
-In case a request cannot be accepted by any taxi in the zone the system
+\begin_layout Description
+[R7.6] In case a request cannot be accepted by any taxi in the zone the system
  searches for the nearest taxi in the surrounding zones.
  
 \end_layout
 
-\begin_layout Enumerate
-Taxis rotate their positions during the week to avoid unfair management
+\begin_layout Description
+[R7.7] Taxis rotate their positions during the week to avoid unfair management
  and significant difference in rides and payment.
  
 \end_layout
@@ -758,6 +893,18 @@ Registration
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{[R1]}{}
+\end_layout
+
+\end_inset
+
 John has just downloaded the application from the app store and he would
  like to make use of it.
  He decides to register to the system in order to take advantage of the
@@ -992,7 +1139,7 @@ Below is presented the Class Diagram which represents the main classes of
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1022,10 +1169,6 @@ Class Diagram for MTS
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2929,11 +3072,575 @@ passwords associated to users must be cripted in order to avoid security
 \end_layout
 
 \begin_layout Chapter
-Alloy Modeling
+Alloy Modelling
+\end_layout
+
+\begin_layout Standard
+This chapter analyzes the consistency of the Class Diagram presented in
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:class-diag"
+
+\end_inset
+
+ through the use of the Alloy Analyzer.
+ In the following section there will be the Alloy code, the responses and
+ the generated worlds.
+\end_layout
+
+\begin_layout Section
+Alloy code
 \end_layout
 
 \begin_layout Chapter
 Other information
+\end_layout
+
+\begin_layout Standard
+This chapter presents information about the developement and the redaction
+ of this document.
+\end_layout
+
+\begin_layout Section
+Working hours
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Giorno
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alessandro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Davide
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Stefano
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22/10/2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23/10/2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+26/10/2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+28/10/2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+29/10/2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30/10/2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+02/11/2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+03/11/2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+04/11/2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+05/11/2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+06/11/2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Total hours
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+26.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Used tools
+\end_layout
+
+\begin_layout Standard
+In order to redact this document the following tools have been used:
+\end_layout
+
+\begin_layout Enumerate
+LaTeX and LyX editor
+\end_layout
+
+\begin_layout Enumerate
+Alloy Analyzer
+\end_layout
+
+\begin_layout Enumerate
+Google Drive
+\end_layout
+
+\begin_layout Enumerate
+GitHub
+\end_layout
+
+\begin_layout Enumerate
+StarUML for diagrams
 \end_layout
 
 \end_body

@@ -3291,62 +3291,6 @@ Alloy world 2
 
 \end_layout
 
-\begin_layout Subsection
-Alloy metamodel
-\end_layout
-
-\begin_layout Standard
-The metamodel shows the interactions between signatures in Alloy.
- We decided to show this diagram too as a comparison with the class diagram
- which has the same classes.
- The only considerable exception is “Position”.
- We purposely avoided to add it in the class diagram as we don’t see the
- necessity of it in the RASD document while it was necessary in the Alloy
- model as it helps defining some of our constraints.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename images/alloy/metamodelDiagram.png
-	display false
-	width 100line%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Alloy metamodel
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Other information
 \end_layout
