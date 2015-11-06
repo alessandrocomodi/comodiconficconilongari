@@ -1128,7 +1128,23 @@ Below is presented the Class Diagram which represents the main classes of
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{class-diag}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1147,12 +1163,6 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:class-diag"
-
-\end_inset
-
 Class Diagram for MTS
 \end_layout
 
@@ -2506,10 +2516,6 @@ Share a taxi sequence diagram
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -2849,9 +2855,16 @@ Entities behaviours
 
 \begin_layout Standard
 In this section are exposed the behaviours of some entities taken from Figure
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:class-diag"
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{class-diag}{3.2}
+\end_layout
 
 \end_inset
 
@@ -3067,9 +3080,15 @@ Alloy Modelling
 \begin_layout Standard
 This chapter analyzes the consistency of the Class Diagram presented in
  Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:class-diag"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{class-diag}{3.2}
+\end_layout
 
 \end_inset
 
@@ -3086,6 +3105,7 @@ Alloy code
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "alloyCode.txt"
+lstparams "keywordstyle={\\color[RGB]{242,134,10}},morekeywords={assert, pred, all, no, lone, one, some, check, run, but, let, implies, not, iff, in, and, or, set, sig, Int, int, if, then, else, exactly, disj, fact, fun, module, abstract, extends, open, none, univ, iden, seq},morecomment={[l]{//}},morecomment={[s]{/*}{*/}},commentstyle={\\color[RGB]{10,200,10}}"
 
 \end_inset
 
