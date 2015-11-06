@@ -85,7 +85,34 @@
 \begin_body
 
 \begin_layout Title
-myTaxiService
+Requirement Analysis and Specification Document
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[1cm]
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/logo-polimi.png
+	display false
+	width 60line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Alessandro Comodi, Davide Conficconi, Stefano Longari
 \end_layout
 
 \begin_layout Standard
@@ -106,7 +133,7 @@ Introduction
 This section aims to show in general terms the purpose and a brief description
  of the project, with the integration of a glossary which will be useful
  for the better understanding of the terms.
- 
+ The software to be developed is called myTaxiService.
 \end_layout
 
 \begin_layout Section
