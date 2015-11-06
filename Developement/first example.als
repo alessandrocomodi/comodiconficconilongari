@@ -189,7 +189,7 @@ pred show(){
   #{r: Ride | r.isShared = True} > 1
 }
 
-pred bello(){
+pred exactlyOneSharing(){
 	#User>1
 	#Driver=3
 	#Queue>1
@@ -205,5 +205,5 @@ pred noShare(){
 }
 run display for 4
 run show for 5
-run bello for 10
+run exactlyOneSharing for 10
 run noShare for 7
