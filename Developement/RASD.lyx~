@@ -75,7 +75,6 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\listings_params "sensitive=true,morecomment={[l]//},morecomment={[l]{--}},morecomment={[s]{/*}{*/}},morestring={[b]&quot;},numbers=none,firstnumber=1,numberstyle={\tiny},stepnumber=2,basicstyle={\scriptsize\ttfamily},commentstyle={\itshape},keywordstyle={\bfseries},ndkeywordstyle={\bfseries},breaklines=true"
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -894,6 +893,18 @@ Registration
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypertarget{[R1]}{}
+\end_layout
+
+\end_inset
+
 John has just downloaded the application from the app store and he would
  like to make use of it.
  He decides to register to the system in order to take advantage of the
@@ -3082,271 +3093,6 @@ reference "fig:class-diag"
 Alloy code
 \end_layout
 
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand lstinputlisting
-filename "alloyCode.txt"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Alloy response
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand lstinputlisting
-filename "alloyResponse.txt"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Alloy Worlds
-\end_layout
-
-\begin_layout Standard
-More than one world was created to show different kind of behaviours of
- the program
-\end_layout
-
-\begin_layout Subsubsection
-World 1
-\end_layout
-
-\begin_layout Standard
-In world 1, created through the predicate “noShare” we forced the world
- to avoid the sharing of rides and to have a significant amount of Actors.
- Also, the world accepts the case in which a Reservation/Request is not
- connected to a ride because of some errors in the creation by the User.
- The world can be seen in Figure 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-hyperlink{world1}{4.1.}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-World 2
-\end_layout
-
-\begin_layout Standard
-In world 2, created through the predicate “exactlyOneSharing” we forced
- the world to have one shared Ride by two users and a reservation.
- Also in this case the predicate is consistent and complies to the given
- requests.
- The world can be seen in Figure 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-hyperlink{world2}{4.2.}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-hypertarget{world1}{}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename images/alloy/noShareAlloyDiagram.png
-	display false
-	width 80pheight%
-	scaleBeforeRotation
-	rotateAngle 90
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Alloy world 1
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-hypertarget{world2}{}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename images/alloy/exactlyOneSharingAlloyDiagram.png
-	display false
-	width 80pheight%
-	scaleBeforeRotation
-	rotateAngle 90
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Alloy world 2
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Alloy metamodel
-\end_layout
-
-\begin_layout Standard
-The metamodel shows the interactions between signatures in Alloy.
- We decided to show this diagram too as a comparison with the class diagram
- which has the same classes.
- The only considerable exception is “Position”.
- We purposely avoided to add it in the class diagram as we don’t see the
- necessity of it in the RASD document while it was necessary in the Alloy
- model as it helps defining some of our constraints.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename images/alloy/metamodelDiagram.png
-	display false
-	width 100line%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Alloy metamodel
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Other information
 \end_layout
@@ -3362,7 +3108,7 @@ Working hours
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="12" columns="4">
+<lyxtabular version="3" rows="13" columns="4">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="center" valignment="top">
@@ -3438,7 +3184,7 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+
 \end_layout
 
 \end_inset
@@ -3563,7 +3309,7 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-30/10/2015
+29/10/2015
 \end_layout
 
 \end_inset
@@ -3581,7 +3327,45 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-3.5
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30/10/2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5
 \end_layout
 
 \end_inset
@@ -3809,7 +3593,7 @@ Total hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-26.5
+23
 \end_layout
 
 \end_inset
@@ -3818,7 +3602,7 @@ Total hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-23
+26.5
 \end_layout
 
 \end_inset
