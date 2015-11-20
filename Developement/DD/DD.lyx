@@ -77,7 +77,7 @@ Design Document
 Alessandro Comodi, Davide Conficconi, Stefano Longari
 \end_layout
 
-\begin_layout Author
+\begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
@@ -99,7 +99,11 @@ Scope
 \end_layout
 
 \begin_layout Section
-Definitions, Acronyms, Abbreviations
+Glossary
+\end_layout
+
+\begin_layout Standard
+S2B
 \end_layout
 
 \begin_layout Section
@@ -118,8 +122,23 @@ Architectural Design
 Overview
 \end_layout
 
+\begin_layout Standard
+This section displays the main architectural project.
+ Firstly it’s presented a high level representation about our S2B and its
+ components interactions.
+ Afterwards the document shows in a deeper way different kinds of view about
+ the system.
+ Eventually it describes other various features about design and architecture
+ decisions.
+\end_layout
+
 \begin_layout Section
 High Level Components and Their Interaction
+\end_layout
+
+\begin_layout Standard
+This section aims to provide, through a class diagram, a general overview
+ about system’s architecture and main interactions between each component.
 \end_layout
 
 \begin_layout Section
