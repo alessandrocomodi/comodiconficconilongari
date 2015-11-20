@@ -3,13 +3,16 @@
 \begin_document
 \begin_header
 \textclass book
+\begin_preamble
+\usepackage{babel}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
+\font_roman lmodern
 \font_sans default
 \font_typewriter default
 \font_math auto
@@ -25,8 +28,17 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
-\spacing single
-\use_hyperref false
+\spacing double
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry false
 \use_package amsmath 1
@@ -103,7 +115,20 @@ Glossary
 \end_layout
 
 \begin_layout Standard
-S2B
+In this section will be explained the unclear terms and achronyms in order
+ to avoid ambiguities and help the reader in understeanding this document.
+\end_layout
+
+\begin_layout Itemize
+S2B: it is the achronym for 
+\begin_inset Quotes eld
+\end_inset
+
+System To Be
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -171,6 +196,355 @@ Algorithm Design
 
 \begin_layout Chapter
 User Interface Design
+\end_layout
+
+\begin_layout Section
+Mockups
+\end_layout
+
+\begin_layout Standard
+In this section will be presented the mockups of the application.
+ They will include both the views for the Mobile and Web application.
+\end_layout
+
+\begin_layout Subsection
+User mobile application
+\end_layout
+
+\begin_layout Standard
+Here are presented the mokups relative to the user side mobile application.
+ Each mockup shows the possible actions that the user can choose.
+\end_layout
+
+\begin_layout Itemize
+In Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Guest-home-page"
+
+\end_inset
+
+ there is the reprasantation of what can a guest do when he opens the app.
+ He has two choices: login, if he has already made an account, otherwise
+ he can register filling up the displayed form.
+\end_layout
+
+\begin_layout Itemize
+In Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:User-home-page"
+
+\end_inset
+
+ there is the action that the user can perform in his home page and the
+ form that he can complete and submit when he wants to modify his profile
+ page.
+\end_layout
+
+\begin_layout Itemize
+In Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Taxi-request-(left)"
+
+\end_inset
+
+ there are the two main features of the application, taxi request and reservatio
+n.
+ They are similar but the reservation has also the possibility to choose
+ date and time of the ride.
+ In both cases the user can choos whether the ride will be shared or not
+ by checking the relative box.
+\end_layout
+
+\begin_layout Itemize
+In Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Check-reservations-(left)"
+
+\end_inset
+
+ the user can check his reservations and requests.
+ In the former case the user can see all his made reservations and, if he
+ wants, he can expand one and delete it with the 
+\begin_inset Quotes eld
+\end_inset
+
+delete
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+ In the latter case, the user can see how much time is left for the arrival
+ of the taxi and what is the taxi code to show to the driver in order to
+ confirm his identity.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Guest-home-page"
+
+\end_inset
+
+Guest home page (left) and Registration page (right)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Mockups/LoginMobile.png
+	display false
+	width 50line%
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename Mockups/RegistrationMobile.png
+	display false
+	width 50line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:User-home-page"
+
+\end_inset
+
+User home page (left) and Manage profile page (right)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Mockups/UserHomePageMobile.png
+	display false
+	width 50line%
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename Mockups/ManageProfileMobile.png
+	display false
+	width 50line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Taxi-request-(left)"
+
+\end_inset
+
+Taxi request (left) and reservation (right)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Mockups/RequestTaxiMobile.png
+	display false
+	width 50line%
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename Mockups/TaxiReservationMobile.png
+	display false
+	width 50line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Check-reservations-(left)"
+
+\end_inset
+
+Check reservations (left) and check Taxi Status (right)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Mockups/CheckReservationMobile.png
+	display false
+	width 50line%
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename Mockups/CheckTaxiStatusMobile.png
+	display false
+	width 50line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
