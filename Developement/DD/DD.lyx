@@ -208,84 +208,235 @@ In this section will be presented the mockups of the application.
 \end_layout
 
 \begin_layout Subsection
-User mobile application
+User side application
 \end_layout
 
 \begin_layout Standard
-Here are presented the mokups relative to the user side mobile application.
+Here are presented the mokups relative to the user side mobile and web applicati
+on.
  Each mockup shows the possible actions that the user can choose.
 \end_layout
 
 \begin_layout Itemize
-In Figure 
+In Figures 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Guest-home-page"
+reference "fig:Guest-home-mobile"
 
 \end_inset
 
- there is the reprasantation of what can a guest do when he opens the app.
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Guest-home-web"
+
+\end_inset
+
+ there are the reprasantation of what a guest can do when he opens the applicati
+on respectively in the mobile and web application.
  He has two choices: login, if he has already made an account, otherwise
- he can register filling up the displayed form.
+ he can click on the register button and go to the registration page.
 \end_layout
 
 \begin_layout Itemize
-In Figure 
+In Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Guest-registration-mobile"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Guest-registration-web"
+
+\end_inset
+
+ there are the reprasantation of the registration page regarding respectively
+ the mobile and web application.
+ A guest has to insert on all the form inputs and press the 
+\begin_inset Quotes eld
+\end_inset
+
+register
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+\end_layout
+
+\begin_layout Itemize
+In Figures 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:User-home-page"
 
 \end_inset
 
- there is the action that the user can perform in his home page and the
- form that he can complete and submit when he wants to modify his profile
- page.
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:User-home-page-1"
+
+\end_inset
+
+ there are the actions that the user can perform in his home page both for
+ the mobile and web application.
 \end_layout
 
 \begin_layout Itemize
 In Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Taxi-request-(left)"
+reference "fig:Manage-profile"
 
 \end_inset
 
- there are the two main features of the application, taxi request and reservatio
-n.
- They are similar but the reservation has also the possibility to choose
- date and time of the ride.
- In both cases the user can choos whether the ride will be shared or not
- by checking the relative box.
+ is presented the mockup for the management of the user profile.
+\end_layout
+
+\begin_layout Itemize
+In Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Taxi-request-mobile"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Taxi-request-web"
+
+\end_inset
+
+ there are the mobile and web mockups of one of the main features of the
+ application, the taxi request.
+ The user has to insert starting and destination addresses, the number of
+ passengers and if he wants, he can check the sharing option.
+\end_layout
+
+\begin_layout Itemize
+In Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Taxi-reservation-mobile"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Taxi-reservation-web"
+
+\end_inset
+
+ there are the mobile and web mockups taxi reservation.
+ The user has to insert starting and destination addresses, the number of
+ passengers and if he wants, he can check the sharing option as in the request,
+ but moreover he has to insert date and time of the ride.
 \end_layout
 
 \begin_layout Itemize
 In Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Check-reservations-(left)"
+reference "fig:Check-taxi-status"
 
 \end_inset
 
- the user can check his reservations and requests.
- In the former case the user can see all his made reservations and, if he
- wants, he can expand one and delete it with the 
-\begin_inset Quotes eld
+ there is the mobile mockup in which is presented the page where the user
+ can check the position of the taxi and its excpected arrival time.
+\end_layout
+
+\begin_layout Itemize
+In Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Check-reservations-mobile"
+
 \end_inset
 
-delete
-\begin_inset Quotes erd
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Check-reservations-web"
+
 \end_inset
 
- button.
- In the latter case, the user can see how much time is left for the arrival
- of the taxi and what is the taxi code to show to the driver in order to
- confirm his identity.
+ are presented the mobile and web mockups for the reservations page, where
+ the user can check his reservations and, in case, delete them.
+\end_layout
+
+\begin_layout Subsection
+Driver side application
+\end_layout
+
+\begin_layout Standard
+In this section are presented the mockups relative to the application available
+ for the drivers.
+\end_layout
+
+\begin_layout Itemize
+In Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Driver-home-page"
+
+\end_inset
+
+ there is the home page of the application with all the respective actions
+ available for the driver.
+\end_layout
+
+\begin_layout Itemize
+In Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Availability-management"
+
+\end_inset
+
+ there is the representation of the management of the drivers availability.
+\end_layout
+
+\begin_layout Itemize
+In Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Ride-confirmation"
+
+\end_inset
+
+ is represented the mockup relative to the confirmation of the rides.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
 status open
 
 \begin_layout Plain Layout
@@ -294,11 +445,11 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Guest-home-page"
+name "fig:Guest-home-mobile"
 
 \end_inset
 
-Guest home page (left) and Registration page (right)
+Guest home mobile
 \end_layout
 
 \end_inset
@@ -317,22 +468,75 @@ Guest home page (left) and Registration page (right)
 \begin_inset Graphics
 	filename Mockups/LoginMobile.png
 	display false
-	width 50line%
+	width 100line%
 
 \end_inset
 
 
-\begin_inset space \qquad{}
+\end_layout
+
 \end_inset
 
 
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Guest-registration-mobile"
+
+\end_inset
+
+Guest registration mobile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename Mockups/RegistrationMobile.png
 	display false
-	width 50line%
+	width 100line%
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -352,6 +556,152 @@ Guest home page (left) and Registration page (right)
 \begin_inset Float figure
 wide false
 sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Guest-home-web"
+
+\end_inset
+
+Guest home web
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Mockups/LoginWeb.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Guest-registration-web"
+
+\end_inset
+
+Guest registration web
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Mockups/RegistrationWeb.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
 status open
 
 \begin_layout Plain Layout
@@ -364,7 +714,7 @@ name "fig:User-home-page"
 
 \end_inset
 
-User home page (left) and Manage profile page (right)
+User home page mobile
 \end_layout
 
 \end_inset
@@ -383,19 +733,68 @@ User home page (left) and Manage profile page (right)
 \begin_inset Graphics
 	filename Mockups/UserHomePageMobile.png
 	display false
-	width 50line%
+	width 100line%
 
 \end_inset
 
 
-\begin_inset space \qquad{}
+\end_layout
+
 \end_inset
 
 
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Manage-profile"
+
+\end_inset
+
+Manage profile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename Mockups/ManageProfileMobile.png
 	display false
-	width 50line%
+	width 100line%
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -418,6 +817,20 @@ User home page (left) and Manage profile page (right)
 \begin_inset Float figure
 wide false
 sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
 status open
 
 \begin_layout Plain Layout
@@ -426,11 +839,84 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Taxi-request-(left)"
+name "fig:User-home-page-1"
 
 \end_inset
 
-Taxi request (left) and reservation (right)
+User home page web
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Mockups/HomeWeb.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Taxi-request-mobile"
+
+\end_inset
+
+Taxi request mobile
 \end_layout
 
 \end_inset
@@ -449,19 +935,387 @@ Taxi request (left) and reservation (right)
 \begin_inset Graphics
 	filename Mockups/RequestTaxiMobile.png
 	display false
-	width 50line%
+	width 100line%
 
 \end_inset
 
 
-\begin_inset space \qquad{}
+\end_layout
+
 \end_inset
 
 
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Taxi-reservation-mobile"
+
+\end_inset
+
+Taxi reservation mobile
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename Mockups/TaxiReservationMobile.png
 	display false
-	width 50line%
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Taxi-request-web"
+
+\end_inset
+
+Taxi request web
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Mockups/RequestsWeb.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Taxi-reservation-web"
+
+\end_inset
+
+Taxi reservation web
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Mockups/ReservationsWeb.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Check-taxi-status"
+
+\end_inset
+
+Check taxi status mobile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Mockups/CheckTaxiStatusMobile.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Check-reservations-mobile"
+
+\end_inset
+
+Check reservations mobile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Mockups/CheckReservationMobile.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Check-reservations-web"
+
+\end_inset
+
+Check reservations web
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Mockups/CheckReservationsWeb.png
+	display false
+	width 100line%
 
 \end_inset
 
@@ -488,11 +1342,25 @@ Taxi request (left) and reservation (right)
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
 \end_layout
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "35pheight%"
+height_special "none"
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -500,11 +1368,11 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Check-reservations-(left)"
+name "fig:Driver-home-page"
 
 \end_inset
 
-Check reservations (left) and check Taxi Status (right)
+Driver home page
 \end_layout
 
 \end_inset
@@ -521,21 +1389,132 @@ Check reservations (left) and check Taxi Status (right)
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename Mockups/CheckReservationMobile.png
+	filename Mockups/DriverHomeMobile.png
 	display false
-	width 50line%
+	width 80line%
 
 \end_inset
 
 
-\begin_inset space \qquad{}
+\end_layout
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "40pheight%"
+height_special "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Availability-management"
+
+\end_inset
+
+Availability management
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Graphics
-	filename Mockups/CheckTaxiStatusMobile.png
+	filename Mockups/ManageAvailabilityMobile.png
 	display false
-	width 50line%
+	width 80line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hspace*{\fill}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "40pheight%"
+height_special "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Ride-confirmation"
+
+\end_inset
+
+Ride confirmation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Mockups/DriverConfirmationMobile.png
+	display false
+	width 80line%
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
