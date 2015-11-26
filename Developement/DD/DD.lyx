@@ -162,8 +162,91 @@ High Level Components and Their Interaction
 \end_layout
 
 \begin_layout Standard
-This section aims to provide, through the diagram below, a general overview
- about system’s architecture and main interactions between each component.
+This section aims to provide, through the diagram in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:High-level-components"
+
+\end_inset
+
+, a general overview about system’s architecture and main interactions between
+ each component.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:High-level-components"
+
+\end_inset
+
+High level components
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The architectural style appointed is a client-server application with a
+ three tier style: a client tier, a tier for the business logic and a tier
+ for the data storage.
+ All main communications between each component and, or, tier happen in
+ an asynchronous way.
+\end_layout
+
+\begin_layout Subsection
+Client tier
+\end_layout
+
+\begin_layout Standard
+This layer represents the different methods of access to the application:
+ via one of the main common browsers (e.g.: Firefox, Chrome, etc…), or through
+ the mobile application, available for main mobile OSs.
+ This logic level has the duty of representing information to the users
+ and interacting with them (this can be seen as the View part of the MVC
+ pattern).
+ The Web Client is linked to a web server that receives data from the system
+ and parses the information to represent them in a compatible way for the
+ browser.
+\end_layout
+
+\begin_layout Subsection
+Business tier
+\end_layout
+
+\begin_layout Standard
+This layer represents the system's core in fact all the application logic
+ is inside this tier.
+ It has three main components: one represents the Manager of all the rides,
+ another one the Queue Manager and in the end a component which handles
+ all the connections with the front end side, called Connection Handler.
+ The Business tier can also access to the data in the Data tier.
+\end_layout
+
+\begin_layout Subsection
+Data tier
+\end_layout
+
+\begin_layout Standard
+This layer contains a DBMS which takes care about the data, their storage
+ and their access.
+ Only the Business tier can access to this tier.
 \end_layout
 
 \begin_layout Section
