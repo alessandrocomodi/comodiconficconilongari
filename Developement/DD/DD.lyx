@@ -204,7 +204,7 @@ High level components
 \end_inset
 
 The architectural style appointed is a client-server application with a
- three tier style: a client tier, a tier for the business logic and a tier
+ multi-tier style: a client tier, a tier for the business logic and a tier
  for the data storage.
  All main communications between each component and, or, tier happen in
  an asynchronous way.
@@ -221,9 +221,17 @@ This layer represents the different methods of access to the application:
  This logic level has the duty of representing information to the users
  and interacting with them (this can be seen as the View part of the MVC
  pattern).
- The Web Client is linked to a web server that receives data from the system
- and parses the information to represent them in a compatible way for the
- browser.
+ The Web Client communicates with the business logic only through a Web
+ tier.
+\end_layout
+
+\begin_layout Subsection
+Web tier
+\end_layout
+
+\begin_layout Standard
+This layer contains a Web Server that functions as middleware between the
+ Web Client and the Business Logic Application.
 \end_layout
 
 \begin_layout Subsection
