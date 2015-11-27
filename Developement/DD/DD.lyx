@@ -285,6 +285,145 @@ Other Design Decisions
 Algorithm Design
 \end_layout
 
+\begin_layout Section
+QueueManager Main Positioning Algorithm
+\end_layout
+
+\begin_layout Standard
+Its objective is to distribute taxis in order to avoid overpopulation of
+ a zone and lack of drivers in another.
+\end_layout
+
+\begin_layout Subsection
+How does it work
+\end_layout
+
+\begin_layout Standard
+When a taxi driver sets himself as available the system is alerted and checks
+ his position through GPS.
+ It then searches for all the zones with a low amount of taxis compared
+ to the number of requests per hour in the zone.
+ If the taxi driver is already in one of those zones he is directly put
+ in the queue of the zone.
+ If is not, he is given a series of zones in which he can go to be put in
+ a queue.
+ The system then continues to check the position of the driver until he
+ reaches one of those zones.
+ As he reaches one he is put in that queue and alerted.
+\end_layout
+
+\begin_layout Section
+QueueManager Main Distribution-Prevision Algorithm
+\end_layout
+
+\begin_layout Standard
+Its objective is to register every ride and use those data to check taxis
+ distribution.
+\end_layout
+
+\begin_layout Subsection
+How does it work
+\end_layout
+
+\begin_layout Standard
+Each time a ride is set the system registers that information with the place
+ and time (considering days of the week).
+ Each time a taxi reaches the position to take his clients the system registers
+ the amount of time needed.
+ Each time a taxi ends a ride the system registers the amount of time used
+ by the taxi.
+ Each time a request cannot be fulfilled because there is no taxi available
+ the system registers it.
+ Using those data, knowing the amount of taxi in each zone and the general
+ distribution the algorithm then can proceed to calculate which zones have
+ already the number of taxi needed to accept all the incoming requests in
+ a reasonable time and which ones instead are too slow or will be.
+ If there are zones of the second kind, when the Main Positioning Algorithm
+ receives a request for positioning someone it is given one of those.
+ If the city zones are instead already all of the first kind the system
+ will send taxis to different zones, starting from the ones with more requests
+ per hour, to try to statistically allow every driver to work the same as
+ others.
+ 
+\end_layout
+
+\begin_layout Section
+RideManager Main Ride-creating Algorithm
+\end_layout
+
+\begin_layout Standard
+Its objective is to create rides from requests and reservations considering
+ the sharing option.
+\end_layout
+
+\begin_layout Subsection
+How does it work
+\end_layout
+
+\begin_layout Standard
+Every time a request is created the system starts this algorithm to try
+ to match the request with an actual ride: It checks for the starting position
+ of the request to know in which zone it is in, and asks the QueueManager
+ for informations about the drivers in that zone, like the maximum number
+ of seats available.
+ If the request has the sharing option enabled the system searches for other
+ pending requests with sharing enabled.
+ If there aren't the request is left on waiting status for 5 minutes, to
+ wait for other requests with sharing enabled.
+ If one is found the system in the next step handles the two requests as
+ one with the amount of passengers that is the sum of those of the requests.
+ If another is not found the request is handled as one with no sharing option
+ enabled.
+ The system now asks the QueueManager for a driver in that zone that has
+ the number of seats necessary to take the request.
+ (it is the QueueManager that has to care about finding the first one in
+ queue, the RideManager has no informations about that) If there is one,
+ the user(s) is alerted about the incoming taxi and a ride is created matching
+ user(s) and driver.
+ If there is no taxi available with that amount of passengers (or no taxi
+ in queue at all) the system checks the nearest zone to the starting position
+ of the request.
+ If in the queue of that zone there is a taxi available with that amount
+ of passengers the ride is created with that taxi and the user(s) alerted
+ it might take some time before the taxi arrives.
+ If there is no taxi available within all the zones adjoining the one from
+ which the request comes from, the user is alerted to try again in some
+ minutes and the request dismissed.
+ If the request was the union of two sharing requests those are divided
+ and the system searches for them as they were normal requests.
+ 
+\end_layout
+
+\begin_layout Section
+RideManager main Reservation-handling Algorithm
+\end_layout
+
+\begin_layout Standard
+Its objective is to assure the reservations are fulfilled and the user doesn't
+ have to wait for the taxi at the moment indicated.
+\end_layout
+
+\begin_layout Subsection
+How does it work
+\end_layout
+
+\begin_layout Standard
+One hour before the reservation starting time the system checks the position
+ of the reservation and through that the zone it is in: The algorithm at
+ this point postpones itself for an amount of time relative to the amount
+ of taxis in the area (for example, if the area is higly overpopulated by
+ taxis the algorithm postpones itself of 45 minutes for the research of
+ the taxi, while if the area is completely empty it might start the research
+ immediately).
+ When the time arrives, the system searches for a driver in the zone that
+ is available.
+ As reservations have the priority respect to normal requests, it continues
+ to search for the first driver that sets itself as available if there is
+ no one in the queue and matches him with the reservation, telling him the
+ position he has to be in and how much time does he have left.
+ 
+\end_layout
+
 \begin_layout Chapter
 User Interface Design
 \end_layout
