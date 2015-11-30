@@ -27,6 +27,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing double
 \use_hyperref true
@@ -171,17 +172,10 @@ reference "fig:High-level-components"
 
 , a general overview about system’s architecture and main interactions between
  each component.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -201,6 +195,17 @@ High level components
 
 \end_layout
 
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/HighLevelDiagram.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 The architectural style appointed is a client-server application with a
@@ -208,6 +213,13 @@ The architectural style appointed is a client-server application with a
  for the data storage.
  All main communications between each component and, or, tier happen in
  an asynchronous way.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -261,8 +273,238 @@ This layer contains a DBMS which takes care about the data, their storage
 Component View
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Component-view"
+
+\end_inset
+
+Component view
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/ComponentDiagram.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Client tier
+\end_layout
+
+\begin_layout Subsubsection
+Mobile-Client
+\end_layout
+
+\begin_layout Standard
+The client mobile is the application that has to be downloaded and installed
+ in the mobile devices from the application stores of the various OSs.
+ It communicates directly with the connection handler through which it sends
+ and receives all the messages necessary to the application in order to
+ fulfill its functionalities.
+\end_layout
+
+\begin_layout Subsubsection
+Web-Client 
+\end_layout
+
+\begin_layout Standard
+The web client, differently from the mobile client, has no need to be installed
+ in the PC device of the users, but is sufficient to use a web browser (e.g.
+ Chrome, Safari, Firefox, …).
+ All the messages that the web client sends and receives from the Connection
+ handler pass through an external Web server.
+\end_layout
+
+\begin_layout Subsection
+Web tier
+\end_layout
+
+\begin_layout Subsubsection
+Web-Server 
+\end_layout
+
+\begin_layout Standard
+This component, which is not integrated within MTS, is an external service
+ offered by GlassFish and is written entirely using Java EE.
+ It puts in communication the web client with the connection handler.
+ This component is needed in order to let the information coming from the
+ connection handler to be readable by the web browser, so it handles only
+ the presentation layer of the application.
+ All the application logic is handled by the Application controller in the
+ Business tier.
+\end_layout
+
+\begin_layout Subsection
+Business tier
+\end_layout
+
+\begin_layout Subsubsection
+Connection-Handler 
+\end_layout
+
+\begin_layout Standard
+The connection handler is the component that handles all the communication
+ between the client tier and the application itself.
+ It is connected with the Controller application and the Security Manager.
+ It sends all the information parsed in XML transparently with respect to
+ the client components.
+\end_layout
+
+\begin_layout Subsubsection
+Application-Controller 
+\end_layout
+
+\begin_layout Standard
+This component is the core of the application, it communicates with all
+ the other components in the business tier.
+ It handles the logic of the application.
+\end_layout
+
+\begin_layout Subsubsection
+Ride Manager
+\end_layout
+
+\begin_layout Standard
+This component is necessary to handle successfully all the matchings between
+ a user and a driver in order to have all the right information of a ride
+ and to send all the notifications to the right users and drivers.
+ It contains some of the main algorithms described in Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Algorithm-Design"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Queue Manager
+\end_layout
+
+\begin_layout Standard
+This component is another important part of the application since it handles
+ all the placements of the various taxis around the zones.
+ It contains the main algorithms for the queue management described in Chapter
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Algorithm-Design"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Security Manager
+\end_layout
+
+\begin_layout Standard
+The security manager is the component that has to grant the security of
+ the application.
+ It prevents guests who are not enrolled to the system to access to it.
+ It also ensures that all the private information about the users are kept
+ safe.
+\end_layout
+
+\begin_layout Subsubsection
+Data Access Manager
+\end_layout
+
+\begin_layout Standard
+This component has the task to communicate with the Data tier and more precisely
+ with the DBMS.
+ It receives all the information to store or to retrieve to and from the
+ DBMS and links the Application controller and the DBMS.
+ It uses JDBC to communicate with the DBMS.
+\end_layout
+
+\begin_layout Subsection
+Data tier
+\end_layout
+
+\begin_layout Subsubsection
+DBMS
+\end_layout
+
+\begin_layout Standard
+This is the Data Base Management System, which has the task to store correctly
+ all the data received from the business tier and to retrieve all the informatio
+n that the Data access manager asks to it.
+ The DBMS runs with MySQL and it must ensure the durability and consistency
+ of the stored data.
+\end_layout
+
 \begin_layout Section
 Deployment View
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Deployment-view"
+
+\end_inset
+
+Deployment view
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/DeploymentDiagram.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -282,6 +524,12 @@ Other Design Decisions
 \end_layout
 
 \begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Algorithm-Design"
+
+\end_inset
+
 Algorithm Design
 \end_layout
 
