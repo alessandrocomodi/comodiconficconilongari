@@ -107,8 +107,41 @@ Introduction
 Purpose
 \end_layout
 
+\begin_layout Standard
+The Design Document has the objective of defining the detailed design choices
+ for MTS, explaining with accuracy the components of the system.
+ In particular has the purpose of opening the black box system showed in
+ the RASD and analyzing his components.
+ 
+\end_layout
+
 \begin_layout Section
 Scope
+\end_layout
+
+\begin_layout Standard
+As described in the RASD, the system to be implemented serves to help users
+ in requesting or reserving taxis and to manage fairly the queues of taxis
+ around the various zones of the city.
+\end_layout
+
+\begin_layout Standard
+Users who are enrolled with the system can make requests or reservations.
+ To insert the starting and destination addresses there is the possibility
+ to use a map, ore eventually write the addresses by hand.
+ Users are also able to add the sharing option, thanks to which they can
+ share the ride with other users and split the price.
+\end_layout
+
+\begin_layout Standard
+Taxi drivers, on the other hand, have the possibility to confirm or decline
+ rides.
+ They can count on a fair management of the taxi queues which distributes
+ cleverly the taxis so that it is impossible to have drivers to whom do
+ not arrive any ride request.
+ This is given by the fact that each taxi, when set to available, is added
+ in a FIFO queue of a specific zone.
+ 
 \end_layout
 
 \begin_layout Section
@@ -140,7 +173,80 @@ Reference Documents
 Document Structure
 \end_layout
 
+\begin_layout Standard
+This document is structured in Chapters, each describing a different design
+ aspect of the S2B.
+\end_layout
+
+\begin_layout Itemize
+Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Architectural-Design"
+
+\end_inset
+
+ deals with the Architectural design of the system, describing a detailed
+ view of the various components and their behavior among each other.
+\end_layout
+
+\begin_layout Itemize
+Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Algorithm-Design"
+
+\end_inset
+
+ analyzes the main algorithms that are needed in order to let the application
+ work as required.
+ These algorithms are written in natural language.
+\end_layout
+
+\begin_layout Itemize
+Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:User-Interface-Design"
+
+\end_inset
+
+ is about the User Interfeces design and here are present the mockups thanks
+ to which the developer can have an idea on how the front-end of the application
+ must be implemented.
+\end_layout
+
+\begin_layout Itemize
+Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Requirement's-Traceability"
+
+\end_inset
+
+ shows the link between the choices made in the design of the system and
+ the requirements written in the RASD.
+\end_layout
+
+\begin_layout Itemize
+Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Other-Information"
+
+\end_inset
+
+ contains information relative to this document but not with the system
+ itself.
+\end_layout
+
 \begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Architectural-Design"
+
+\end_inset
+
 Architectural Design
 \end_layout
 
@@ -507,6 +613,19 @@ Deployment view
 
 \end_layout
 
+\begin_layout Standard
+The S2B was thought to mirror the architectural design, therefore each logic
+ tier is mapped into a physical layer.
+ The client side of the application is sited on a device for each user:
+ the mobile client is deployed on a mobile device, while, on the web side,
+ all users can reach the application through one of the main common browser.
+ The web server is placed on a separate machine because it is going to be
+ deployed on an external service like Glassfish.
+ All the Business logic components are deployed together on a server farm,
+ since the application is meant to be used by a large number of users.
+ The DBMS stands apart from all other components for security purposes.
+\end_layout
+
 \begin_layout Section
 Runtime View
 \end_layout
@@ -673,6 +792,12 @@ One hour before the reservation starting time the system checks the position
 \end_layout
 
 \begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:User-Interface-Design"
+
+\end_inset
+
 User Interface Design
 \end_layout
 
@@ -2005,11 +2130,23 @@ Ride confirmation
 \end_layout
 
 \begin_layout Chapter
-Requiremet's Traceability
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Requirement's-Traceability"
+
+\end_inset
+
+Requirement's Traceability
 \end_layout
 
 \begin_layout Chapter
-References
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Other-Information"
+
+\end_inset
+
+Other Information
 \end_layout
 
 \end_body
