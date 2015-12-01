@@ -565,8 +565,7 @@ DBMS
 This is the Data Base Management System, which has the task to store correctly
  all the data received from the business tier and to retrieve all the informatio
 n that the Data access manager asks to it.
- The DBMS runs with MySQL and it must ensure the durability and consistency
- of the stored data.
+ The DBMS must ensure the durability and consistency of the stored data.
 \end_layout
 
 \begin_layout Section
@@ -634,6 +633,278 @@ Runtime View
 Component Interfaces
 \end_layout
 
+\begin_layout Standard
+In this section the reader can find how the various components interact
+ among each other, i.e.
+ the methods offered and visible to the external world.
+\end_layout
+
+\begin_layout Subsection
+Business tier and Data tier
+\end_layout
+
+\begin_layout Standard
+Business and data tier communicate through the Data access manager and the
+ DBMS.
+ The two components can interface one with the other thanks to JDBC, which
+ takes care of all the interaction between the Data access manager and the
+ Database.
+ Thanks to JDBC the developers have no constraints on what kind of DBMS
+ they are going to adopt.
+\end_layout
+
+\begin_layout Subsection
+RideManager interfaces
+\end_layout
+
+\begin_layout Standard
+This component offers several methods regarding the rides and the most important
+ are listed below:
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Ride createRide(User user, String startingAddress, String destinationAddress);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method is callable from other components in order to create a new Ride.
+ It will gather the information present in the parameters and it will return
+ the created Ride.
+ The ride will contain all the information relative to it, which include
+ the starting and destination addresses, the user, the driver assigned and
+ in case of a reservation, the time of the appointment.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\shape italic
+Ride reservationInfo(User user);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method will return all the rides that correspond to a reservation given
+ in input a specific user.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\shape italic
+Ride requestInfo(User user);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method will return the pending request of the user if there is one,
+ otherwise it will return a 
+\shape italic
+null object.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\shape italic
+boolean deleteRide(Ride ride);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method deletes the ride that is given as parameter.
+ The ride is deletable only if it is a reservation and, if so, it returns
+ 
+\begin_inset Quotes eld
+\end_inset
+
+true
+\begin_inset Quotes erd
+\end_inset
+
+, otherwise it returns 
+\begin_inset Quotes eld
+\end_inset
+
+false
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+QueueManager interfaces
+\end_layout
+
+\begin_layout Standard
+The queue manager offers all the interfaces regarding the allocation of
+ the taxi drivers and their queuing.
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Driver getDriver(String startingAddress);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This interface retrieves the first available taxi driver relative to the
+ zone of the input address and returns a driver, which will be associated
+ to a ride.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\shape italic
+void dequeueDriver(Driver driver);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method is used to dequeue a taxi driver from its relative zone when
+ this one is set to 
+\begin_inset Quotes eld
+\end_inset
+
+busy
+\begin_inset Quotes erd
+\end_inset
+
+.
+ There is no return value.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\shape italic
+Zone enqueueDriver(Driver driver, Zone currentZone);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method offers the possibility to enqueue a taxi driver whenever he
+ becomes 
+\begin_inset Quotes eld
+\end_inset
+
+available
+\begin_inset Quotes erd
+\end_inset
+
+.
+ The queue manager analyzes the distribution of taxis following the relative
+ algorithm in Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Algorithm-Design"
+
+\end_inset
+
+ and assignes a zone to the driver.
+ The assigned zone is returned from this method.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+SecurityManager interfaces
+\end_layout
+
+\begin_layout Standard
+The security manager has to offer the possibility to grant the authenticity
+ and safeness of data and information.
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+boolean validID(String IDdocument);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method checks whether the ID document inserted by a guest in order
+ to register is valid or not.
+ The input parameter is a string containing the ID code and the return value
+ is a boolean: true if the ID is valid, false otherwise.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\shape italic
+boolean validCredentials(String user, String password);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method verifies if the user e-mail and password match or if they are
+ present in the system.
+ As input parameters there are two strings representing respectively the
+ user e-mail and the associated password.
+ The return value is a boolean which is: true if the user has inserted correct
+ credentials or if he is actually registered, false otherwise.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+ConnectionHandler interfaces
+\end_layout
+
+\begin_layout Standard
+This component has the important task to put in communication the client
+ tier with the business tier.
+ It offers all the procedures that consent the information to travel from
+ one side to the other and viceversa.
+ The interfaces offered are many and here the reader can find some of the
+ most important ones.
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Object fromClientToServer(Object message);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method, in which there are generic objects as parameter and return
+ types, permits the communication from client to server.
+ The generic 
+\begin_inset Quotes eld
+\end_inset
+
+message
+\begin_inset Quotes erd
+\end_inset
+
+ can be complex, in fact it contains all the information about the message
+ as the user who sent it and the data stored within it.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\shape italic
+Object fromServerToClient(Object message);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+As in the previous method, this one grants the communication from the server
+ to the client tier.
+ In this case the message contains the information about who is the user
+ that has to receive the message and what is the data contained within it.
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Selected Architectural Styles and Patterns
 \end_layout
