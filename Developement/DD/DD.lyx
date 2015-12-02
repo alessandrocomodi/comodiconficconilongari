@@ -110,8 +110,8 @@ Purpose
 \begin_layout Standard
 The Design Document has the objective of defining the detailed design choices
  for MTS, explaining with accuracy the components of the system.
- In particular has the purpose of opening the black box system showed in
- the RASD and analyzing his components.
+ In particular it has the purpose of opening the black box system showed
+ in the RASD and analyzing his components.
  
 \end_layout
 
@@ -165,8 +165,60 @@ System To Be
 .
 \end_layout
 
+\begin_layout Itemize
+RASD: Requirement Analysis & Specification Document.
+\end_layout
+
+\begin_layout Itemize
+DB: acronym for DataBase.
+\end_layout
+
+\begin_layout Itemize
+DBMS: DataBase Management System.
+\end_layout
+
+\begin_layout Itemize
+MVC: Model View Controller design pattern.
+\end_layout
+
+\begin_layout Itemize
+FIFO: First-In First-Out policy.
+\end_layout
+
+\begin_layout Itemize
+OS: Operating System.
+\end_layout
+
+\begin_layout Itemize
+JavaEE: Java Enterprise Edition.
+\end_layout
+
+\begin_layout Itemize
+XML: It is the eXtensible Markup Language.
+\end_layout
+
+\begin_layout Itemize
+MTS: MyTaxiService, it is the name of the application.
+\end_layout
+
+\begin_layout Itemize
+JDBC: Java DataBase Connectivity.
+\end_layout
+
 \begin_layout Section
 Reference Documents
+\end_layout
+
+\begin_layout Standard
+The documents used as references in order to redact this document are:
+\end_layout
+
+\begin_layout Itemize
+IEEE Std 1016 - 2009 for Software Design Descriptions.
+\end_layout
+
+\begin_layout Itemize
+RASD for MTS, previously redacted.
 \end_layout
 
 \begin_layout Section
@@ -315,8 +367,8 @@ High level components
 \end_inset
 
 The architectural style appointed is a client-server application with a
- multi-tier style: a client tier, a tier for the business logic and a tier
- for the data storage.
+ multi-tier style: a client tier, a tier for the business logic, a web tier
+ and a tier for the data storage.
  All main communications between each component and, or, tier happen in
  an asynchronous way.
 \end_layout
@@ -335,7 +387,7 @@ Client tier
 \begin_layout Standard
 This layer represents the different methods of access to the application:
  via one of the main common browsers (e.g.: Firefox, Chrome, etc…), or through
- the mobile application, available for main mobile OSs.
+ the mobile application, available for the main mobile OSs.
  This logic level has the duty of representing information to the users
  and interacting with them (this can be seen as the View part of the MVC
  pattern).
@@ -428,7 +480,7 @@ Mobile-Client
 \end_layout
 
 \begin_layout Standard
-The client mobile is the application that has to be downloaded and installed
+The mobile client is the application that has to be downloaded and installed
  in the mobile devices from the application stores of the various OSs.
  It communicates directly with the connection handler through which it sends
  and receives all the messages necessary to the application in order to
@@ -549,7 +601,7 @@ Data Access Manager
 This component has the task to communicate with the Data tier and more precisely
  with the DBMS.
  It receives all the information to store or to retrieve to and from the
- DBMS and links the Application controller and the DBMS.
+ DBMS.
  It uses JDBC to communicate with the DBMS.
 \end_layout
 
@@ -566,6 +618,60 @@ This is the Data Base Management System, which has the task to store correctly
  all the data received from the business tier and to retrieve all the informatio
 n that the Data access manager asks to it.
  The DBMS must ensure the durability and consistency of the stored data.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+E-R schema of the Database
+\end_layout
+
+\begin_layout Standard
+In this subsection there is an Entity-Relation schema representing an overview
+ of the DB entities.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+E-R schema
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/ER.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -665,17 +771,38 @@ This component offers several methods regarding the rides and the most important
 \begin_layout Itemize
 
 \shape italic
-Ride createRide(User user, String startingAddress, String destinationAddress);
+Ride createRide(User user, String startingAddress, String destinationAddress,
+ boolean sharingOption);
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 This method is callable from other components in order to create a new Ride.
- It will gather the information present in the parameters and it will return
- the created Ride.
+ It will gather the information present in the parameters which are the
+ user, the starting and destination addresses and the sharing option and
+ it will return the created Ride.
  The ride will contain all the information relative to it, which include
- the starting and destination addresses, the user, the driver assigned and
- in case of a reservation, the time of the appointment.
+ the starting and destination addresses, the user, the driver assigned,
+ the sharing option.
+ The created ride will be only a request because, in order to create a reservati
+on ride, a different method must be called.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\shape italic
+Ride createRide(User user, String startingAddress, String destinationAddress,
+ boolean sharingOption, Date date, Time time);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method is similar to the previous one, but it includes also the date
+ and time as parameters, which indicate that the ride is a reservation and
+ not a simple request.
+ It returns the created Ride as before, which will contain also the time
+ and date of the appointment of the reservation.
 \end_layout
 
 \end_deeper
@@ -910,8 +1037,9 @@ Selected Architectural Styles, Patterns and Other Design Decisions
 \end_layout
 
 \begin_layout Standard
-In this section all main architectural Styles and Patterns are here presented
- and explained reasons that brought to select them
+In this section all the main architectural Styles, Patterns and other design
+ decisions are presented and the reasons that brought to select them are
+ explained.
 \end_layout
 
 \begin_layout Subsection
@@ -920,14 +1048,15 @@ Client-Server
 
 \begin_layout Standard
 This architectural styles is adopted due to the fact that the application
- was thought as follow: a user, who registrates himself, access to the client
- application side, via mobile applcation or via browser, and ask for a service.
+ was thought as follows: a user, who registers himself, accesses to the
+ client application side, via mobile applcation or via web browser, and
+ asks for a service.
  The kind of service depends on the type of user: if it is a customer user,
  the service required is to provide to him a taxi; if it is a driver user,
  the service required is to provide him, or her, a fair management of his/her
  future ride and assign him to a zone.
  Therefore the Server has to provide all this kind of services in the best
- possile manner.
+ possile way.
 \end_layout
 
 \begin_layout Subsection
@@ -935,14 +1064,13 @@ Multi-tier Architecture
 \end_layout
 
 \begin_layout Standard
-The architecture of the S2B is a multi-tier architecture : Data tier, Business
+The architecture of the S2B is a multi-tier architecture: Data tier, Business
  tier, a Presentation tier interposed,only for the web side, and a final
  Presentation tier.
- This choice allows to minimize as posible the possible coupling between
+ This choice allows to minimize as possible the feasible coupling between
  components and an implicit security feature.
- The middle Presentation tier lets to use an external service for the web
- server function and makes to not worry about the parsing of XML messages
- in HTML pages.
+ Thanks to the multi-tier architecture the system will be easly maintainable
+ and the scalability it's improvable.
 \end_layout
 
 \begin_layout Subsection
@@ -951,10 +1079,11 @@ Model-View-Controller
 
 \begin_layout Standard
 The MVC pattern is adopted for the primary front-end purpose of the application:
- the Model is the principal business components, those achieve all the required
- functionalities, and the DB; the View is the client, both mobile and web,
- with the addition of the web server which also fulfils the same aim.
- The controller of the application is the component 
+ the Model is represented by the principal business components, which achieve
+ all the required functionalities, and by the DB; the View is the client,
+ both mobile and web, with the addition of the web server which also fulfils
+ the same objective.
+ The Controller of the application is the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -962,7 +1091,7 @@ Application Controller
 \begin_inset Quotes erd
 \end_inset
 
- which has to catch the changes in the Model.
+ component which has to catch the changes in the Model.
  The same pattern is selected to give to the S2B a Programmatic Interface
  to the server side of the application.
 \end_layout
@@ -976,8 +1105,8 @@ When an user receives the confirmation about his ride he can check the status
  of the taxi, or when he does a reservation he can check the status of his
  application.
  All this kind of events are solved with a Observer pattern: when the position
- of the taxi, or the reservation, (the subject) changes its status, the
- user's client (observer) is notified about the variation.
+ of the taxi, or the reservation, (the subject), changes its status, the
+ user's client (observer) is notified about these variations.
 \end_layout
 
 \begin_layout Chapter
