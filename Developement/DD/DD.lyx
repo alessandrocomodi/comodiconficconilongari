@@ -107,8 +107,41 @@ Introduction
 Purpose
 \end_layout
 
+\begin_layout Standard
+The Design Document has the objective of defining the detailed design choices
+ for MTS, explaining with accuracy the components of the system.
+ In particular has the purpose of opening the black box system showed in
+ the RASD and analyzing his components.
+ 
+\end_layout
+
 \begin_layout Section
 Scope
+\end_layout
+
+\begin_layout Standard
+As described in the RASD, the system to be implemented serves to help users
+ in requesting or reserving taxis and to manage fairly the queues of taxis
+ around the various zones of the city.
+\end_layout
+
+\begin_layout Standard
+Users who are enrolled with the system can make requests or reservations.
+ To insert the starting and destination addresses there is the possibility
+ to use a map, ore eventually write the addresses by hand.
+ Users are also able to add the sharing option, thanks to which they can
+ share the ride with other users and split the price.
+\end_layout
+
+\begin_layout Standard
+Taxi drivers, on the other hand, have the possibility to confirm or decline
+ rides.
+ They can count on a fair management of the taxi queues which distributes
+ cleverly the taxis so that it is impossible to have drivers to whom do
+ not arrive any ride request.
+ This is given by the fact that each taxi, when set to available, is added
+ in a FIFO queue of a specific zone.
+ 
 \end_layout
 
 \begin_layout Section
@@ -140,7 +173,80 @@ Reference Documents
 Document Structure
 \end_layout
 
+\begin_layout Standard
+This document is structured in Chapters, each describing a different design
+ aspect of the S2B.
+\end_layout
+
+\begin_layout Itemize
+Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Architectural-Design"
+
+\end_inset
+
+ deals with the Architectural design of the system, describing a detailed
+ view of the various components and their behavior among each other.
+\end_layout
+
+\begin_layout Itemize
+Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Algorithm-Design"
+
+\end_inset
+
+ analyzes the main algorithms that are needed in order to let the application
+ work as required.
+ These algorithms are written in natural language.
+\end_layout
+
+\begin_layout Itemize
+Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:User-Interface-Design"
+
+\end_inset
+
+ is about the User Interfeces design and here are present the mockups thanks
+ to which the developer can have an idea on how the front-end of the application
+ must be implemented.
+\end_layout
+
+\begin_layout Itemize
+Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Requirement's-Traceability"
+
+\end_inset
+
+ shows the link between the choices made in the design of the system and
+ the requirements written in the RASD.
+\end_layout
+
+\begin_layout Itemize
+Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Other-Information"
+
+\end_inset
+
+ contains information relative to this document but not with the system
+ itself.
+\end_layout
+
 \begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Architectural-Design"
+
+\end_inset
+
 Architectural Design
 \end_layout
 
@@ -459,8 +565,7 @@ DBMS
 This is the Data Base Management System, which has the task to store correctly
  all the data received from the business tier and to retrieve all the informatio
 n that the Data access manager asks to it.
- The DBMS runs with MySQL and it must ensure the durability and consistency
- of the stored data.
+ The DBMS must ensure the durability and consistency of the stored data.
 \end_layout
 
 \begin_layout Section
@@ -507,6 +612,19 @@ Deployment view
 
 \end_layout
 
+\begin_layout Standard
+The S2B was thought to mirror the architectural design, therefore each logic
+ tier is mapped into a physical layer.
+ The client side of the application is sited on a device for each user:
+ the mobile client is deployed on a mobile device, while, on the web side,
+ all users can reach the application through one of the main common browser.
+ The web server is placed on a separate machine because it is going to be
+ deployed on an external service like Glassfish.
+ All the Business logic components are deployed together on a server farm,
+ since the application is meant to be used by a large number of users.
+ The DBMS stands apart from all other components for security purposes.
+\end_layout
+
 \begin_layout Section
 Runtime View
 \end_layout
@@ -515,12 +633,351 @@ Runtime View
 Component Interfaces
 \end_layout
 
-\begin_layout Section
-Selected Architectural Styles and Patterns
+\begin_layout Standard
+In this section the reader can find how the various components interact
+ among each other, i.e.
+ the methods offered and visible to the external world.
 \end_layout
 
+\begin_layout Subsection
+Business tier and Data tier
+\end_layout
+
+\begin_layout Standard
+Business and data tier communicate through the Data access manager and the
+ DBMS.
+ The two components can interface one with the other thanks to JDBC, which
+ takes care of all the interaction between the Data access manager and the
+ Database.
+ Thanks to JDBC the developers have no constraints on what kind of DBMS
+ they are going to adopt.
+\end_layout
+
+\begin_layout Subsection
+RideManager interfaces
+\end_layout
+
+\begin_layout Standard
+This component offers several methods regarding the rides and the most important
+ are listed below:
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Ride createRide(User user, String startingAddress, String destinationAddress);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method is callable from other components in order to create a new Ride.
+ It will gather the information present in the parameters and it will return
+ the created Ride.
+ The ride will contain all the information relative to it, which include
+ the starting and destination addresses, the user, the driver assigned and
+ in case of a reservation, the time of the appointment.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\shape italic
+Ride reservationInfo(User user);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method will return all the rides that correspond to a reservation given
+ in input a specific user.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\shape italic
+Ride requestInfo(User user);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method will return the pending request of the user if there is one,
+ otherwise it will return a 
+\shape italic
+null object.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\shape italic
+boolean deleteRide(Ride ride);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method deletes the ride that is given as parameter.
+ The ride is deletable only if it is a reservation and, if so, it returns
+ 
+\begin_inset Quotes eld
+\end_inset
+
+true
+\begin_inset Quotes erd
+\end_inset
+
+, otherwise it returns 
+\begin_inset Quotes eld
+\end_inset
+
+false
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+QueueManager interfaces
+\end_layout
+
+\begin_layout Standard
+The queue manager offers all the interfaces regarding the allocation of
+ the taxi drivers and their queuing.
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Driver getDriver(String startingAddress);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This interface retrieves the first available taxi driver relative to the
+ zone of the input address and returns a driver, which will be associated
+ to a ride.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\shape italic
+void dequeueDriver(Driver driver);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method is used to dequeue a taxi driver from its relative zone when
+ this one is set to 
+\begin_inset Quotes eld
+\end_inset
+
+busy
+\begin_inset Quotes erd
+\end_inset
+
+.
+ There is no return value.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\shape italic
+Zone enqueueDriver(Driver driver, Zone currentZone);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method offers the possibility to enqueue a taxi driver whenever he
+ becomes 
+\begin_inset Quotes eld
+\end_inset
+
+available
+\begin_inset Quotes erd
+\end_inset
+
+.
+ The queue manager analyzes the distribution of taxis following the relative
+ algorithm in Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Algorithm-Design"
+
+\end_inset
+
+ and assignes a zone to the driver.
+ The assigned zone is returned from this method.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+SecurityManager interfaces
+\end_layout
+
+\begin_layout Standard
+The security manager has to offer the possibility to grant the authenticity
+ and safeness of data and information.
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+boolean validID(String IDdocument);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method checks whether the ID document inserted by a guest in order
+ to register is valid or not.
+ The input parameter is a string containing the ID code and the return value
+ is a boolean: true if the ID is valid, false otherwise.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\shape italic
+boolean validCredentials(String user, String password);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method verifies if the user e-mail and password match or if they are
+ present in the system.
+ As input parameters there are two strings representing respectively the
+ user e-mail and the associated password.
+ The return value is a boolean which is: true if the user has inserted correct
+ credentials or if he is actually registered, false otherwise.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+ConnectionHandler interfaces
+\end_layout
+
+\begin_layout Standard
+This component has the important task to put in communication the client
+ tier with the business tier.
+ It offers all the procedures that consent the information to travel from
+ one side to the other and viceversa.
+ The interfaces offered are many and here the reader can find some of the
+ most important ones.
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Object fromClientToServer(Object message);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This method, in which there are generic objects as parameter and return
+ types, permits the communication from client to server.
+ The generic 
+\begin_inset Quotes eld
+\end_inset
+
+message
+\begin_inset Quotes erd
+\end_inset
+
+ can be complex, in fact it contains all the information about the message
+ as the user who sent it and the data stored within it.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\shape italic
+Object fromServerToClient(Object message);
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+As in the previous method, this one grants the communication from the server
+ to the client tier.
+ In this case the message contains the information about who is the user
+ that has to receive the message and what is the data contained within it.
+\end_layout
+
+\end_deeper
 \begin_layout Section
-Other Design Decisions
+Selected Architectural Styles, Patterns and Other Design Decisions
+\end_layout
+
+\begin_layout Standard
+In this section all main architectural Styles and Patterns are here presented
+ and explained reasons that brought to select them
+\end_layout
+
+\begin_layout Subsection
+Client-Server
+\end_layout
+
+\begin_layout Standard
+This architectural styles is adopted due to the fact that the application
+ was thought as follow: a user, who registrates himself, access to the client
+ application side, via mobile applcation or via browser, and ask for a service.
+ The kind of service depends on the type of user: if it is a customer user,
+ the service required is to provide to him a taxi; if it is a driver user,
+ the service required is to provide him, or her, a fair management of his/her
+ future ride and assign him to a zone.
+ Therefore the Server has to provide all this kind of services in the best
+ possile manner.
+\end_layout
+
+\begin_layout Subsection
+Multi-tier Architecture
+\end_layout
+
+\begin_layout Standard
+The architecture of the S2B is a multi-tier architecture : Data tier, Business
+ tier, a Presentation tier interposed,only for the web side, and a final
+ Presentation tier.
+ This choice allows to minimize as posible the possible coupling between
+ components and an implicit security feature.
+ The middle Presentation tier lets to use an external service for the web
+ server function and makes to not worry about the parsing of XML messages
+ in HTML pages.
+\end_layout
+
+\begin_layout Subsection
+Model-View-Controller
+\end_layout
+
+\begin_layout Standard
+The MVC pattern is adopted for the primary front-end purpose of the application:
+ the Model is the principal business components, those achieve all the required
+ functionalities, and the DB; the View is the client, both mobile and web,
+ with the addition of the web server which also fulfils the same aim.
+ The controller of the application is the component 
+\begin_inset Quotes eld
+\end_inset
+
+Application Controller
+\begin_inset Quotes erd
+\end_inset
+
+ which has to catch the changes in the Model.
+ The same pattern is selected to give to the S2B a Programmatic Interface
+ to the server side of the application.
+\end_layout
+
+\begin_layout Subsection
+Observer pattern
+\end_layout
+
+\begin_layout Standard
+When an user receives the confirmation about his ride he can check the status
+ of the taxi, or when he does a reservation he can check the status of his
+ application.
+ All this kind of events are solved with a Observer pattern: when the position
+ of the taxi, or the reservation, (the subject) changes its status, the
+ user's client (observer) is notified about the variation.
 \end_layout
 
 \begin_layout Chapter
@@ -673,6 +1130,12 @@ One hour before the reservation starting time the system checks the position
 \end_layout
 
 \begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:User-Interface-Design"
+
+\end_inset
+
 User Interface Design
 \end_layout
 
@@ -2005,11 +2468,23 @@ Ride confirmation
 \end_layout
 
 \begin_layout Chapter
-Requiremet's Traceability
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Requirement's-Traceability"
+
+\end_inset
+
+Requirement's Traceability
 \end_layout
 
 \begin_layout Chapter
-References
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Other-Information"
+
+\end_inset
+
+Other Information
 \end_layout
 
 \end_body
