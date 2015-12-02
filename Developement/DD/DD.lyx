@@ -906,11 +906,78 @@ As in the previous method, this one grants the communication from the server
 
 \end_deeper
 \begin_layout Section
-Selected Architectural Styles and Patterns
+Selected Architectural Styles, Patterns and Other Design Decisions
 \end_layout
 
-\begin_layout Section
-Other Design Decisions
+\begin_layout Standard
+In this section all main architectural Styles and Patterns are here presented
+ and explained reasons that brought to select them
+\end_layout
+
+\begin_layout Subsection
+Client-Server
+\end_layout
+
+\begin_layout Standard
+This architectural styles is adopted due to the fact that the application
+ was thought as follow: a user, who registrates himself, access to the client
+ application side, via mobile applcation or via browser, and ask for a service.
+ The kind of service depends on the type of user: if it is a customer user,
+ the service required is to provide to him a taxi; if it is a driver user,
+ the service required is to provide him, or her, a fair management of his/her
+ future ride and assign him to a zone.
+ Therefore the Server has to provide all this kind of services in the best
+ possile manner.
+\end_layout
+
+\begin_layout Subsection
+Multi-tier Architecture
+\end_layout
+
+\begin_layout Standard
+The architecture of the S2B is a multi-tier architecture : Data tier, Business
+ tier, a Presentation tier interposed,only for the web side, and a final
+ Presentation tier.
+ This choice allows to minimize as posible the possible coupling between
+ components and an implicit security feature.
+ The middle Presentation tier lets to use an external service for the web
+ server function and makes to not worry about the parsing of XML messages
+ in HTML pages.
+\end_layout
+
+\begin_layout Subsection
+Model-View-Controller
+\end_layout
+
+\begin_layout Standard
+The MVC pattern is adopted for the primary front-end purpose of the application:
+ the Model is the principal business components, those achieve all the required
+ functionalities, and the DB; the View is the client, both mobile and web,
+ with the addition of the web server which also fulfils the same aim.
+ The controller of the application is the component 
+\begin_inset Quotes eld
+\end_inset
+
+Application Controller
+\begin_inset Quotes erd
+\end_inset
+
+ which has to catch the changes in the Model.
+ The same pattern is selected to give to the S2B a Programmatic Interface
+ to the server side of the application.
+\end_layout
+
+\begin_layout Subsection
+Observer pattern
+\end_layout
+
+\begin_layout Standard
+When an user receives the confirmation about his ride he can check the status
+ of the taxi, or when he does a reservation he can check the status of his
+ application.
+ All this kind of events are solved with a Observer pattern: when the position
+ of the taxi, or the reservation, (the subject) changes its status, the
+ user's client (observer) is notified about the variation.
 \end_layout
 
 \begin_layout Chapter
