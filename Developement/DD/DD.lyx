@@ -2987,14 +2987,14 @@ reference "sub:Login"
 
  of the Runtime view, that explain how the login works, whereas the correctness
  of the data for registration and login are checked by the Security Manager
- component( susbection 
+ component (susbection 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:Security-Manager"
 
 \end_inset
 
-of the Component view.
+ of the Component view).
 \end_layout
 
 \begin_layout Section
@@ -3009,7 +3009,7 @@ reference "sub:Shared-request"
 
 \end_inset
 
-, 
+ and 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:Reservation"
@@ -3024,15 +3024,14 @@ reference "sec:RideManager-main-Reservation-han"
 
 \end_inset
 
- and
+ and 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:RideManager-main-Reservation-han"
 
 \end_inset
 
-how it works in a deeper way for the user side.
- The grap
+ how does it work in a deeper way for the user side.
 \end_layout
 
 \begin_layout Section
@@ -3105,7 +3104,7 @@ Working hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-Giorno
+Day
 \end_layout
 
 \end_inset
@@ -3143,7 +3142,7 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-22/10/2015
+19/11/2015
 \end_layout
 
 \end_inset
@@ -3152,82 +3151,6 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-23/10/2015
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-26/10/2015
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 3
 \end_layout
 
@@ -3257,7 +3180,7 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-28/10/2015
+20/11/2015
 \end_layout
 
 \end_inset
@@ -3266,7 +3189,7 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-3
+5
 \end_layout
 
 \end_inset
@@ -3275,7 +3198,7 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-3
+5
 \end_layout
 
 \end_inset
@@ -3295,7 +3218,7 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-30/10/2015
+23/11/2015
 \end_layout
 
 \end_inset
@@ -3304,7 +3227,16 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-2
+2.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.5
 \end_layout
 
 \end_inset
@@ -3318,60 +3250,13 @@ Stefano
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
 </row>
 <row>
 <cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-02/11/2015
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-03/11/2015
+25/11/2015
 \end_layout
 
 \end_inset
@@ -3398,6 +3283,82 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+26/11/2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+27/11/2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 -
 \end_layout
 
@@ -3409,7 +3370,7 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-04/11/2015
+01/12/2015
 \end_layout
 
 \end_inset
@@ -3427,7 +3388,7 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-2
+3
 \end_layout
 
 \end_inset
@@ -3436,7 +3397,7 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-4
+5
 \end_layout
 
 \end_inset
@@ -3447,7 +3408,7 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-05/11/2015
+02/12/2015
 \end_layout
 
 \end_inset
@@ -3456,7 +3417,7 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-2
+3
 \end_layout
 
 \end_inset
@@ -3485,7 +3446,7 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-06/11/2015
+03/12/2015
 \end_layout
 
 \end_inset
@@ -3494,7 +3455,7 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-4
+3
 \end_layout
 
 \end_inset
@@ -3503,7 +3464,7 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-4
+3
 \end_layout
 
 \end_inset
@@ -3512,14 +3473,52 @@ Stefano
 \begin_inset Text
 
 \begin_layout Plain Layout
-4
+3
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RASD hours
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+26.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3532,7 +3531,7 @@ Total hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-24
+51
 \end_layout
 
 \end_inset
@@ -3541,7 +3540,7 @@ Total hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-26.5
+53
 \end_layout
 
 \end_inset
@@ -3550,7 +3549,7 @@ Total hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-23
+49.5
 \end_layout
 
 \end_inset
@@ -3561,6 +3560,38 @@ Total hours
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Used tools
+\end_layout
+
+\begin_layout Standard
+Following are listed all the main tools used in order to redact this document:
+\end_layout
+
+\begin_layout Itemize
+LaTeX and LyX editor;
+\end_layout
+
+\begin_layout Itemize
+Balsamiq Mockups 3.0;
+\end_layout
+
+\begin_layout Itemize
+starUML: for the sequence diagrams;
+\end_layout
+
+\begin_layout Itemize
+Google Drive;
+\end_layout
+
+\begin_layout Itemize
+Dia: for the E-R schema;
+\end_layout
+
+\begin_layout Itemize
+Microsoft Word;
 \end_layout
 
 \end_body
