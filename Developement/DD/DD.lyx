@@ -605,6 +605,12 @@ reference "chap:Algorithm-Design"
 \end_layout
 
 \begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Security-Manager"
+
+\end_inset
+
 Security Manager
 \end_layout
 
@@ -765,6 +771,12 @@ In this section the reader can find the modality in which the various components
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Login"
+
+\end_inset
+
 Login
 \end_layout
 
@@ -833,6 +845,12 @@ Login sequence diagram
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Shared-request"
+
+\end_inset
+
 Shared request
 \end_layout
 
@@ -907,6 +925,12 @@ Shared request sequence diagram
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Availability-Management"
+
+\end_inset
+
 Availability Management
 \end_layout
 
@@ -978,6 +1002,12 @@ Availability management sequence diagram
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Reservation"
+
+\end_inset
+
 Reservation
 \end_layout
 
@@ -1433,6 +1463,12 @@ Algorithm Design
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:QueueManager-Main-Positioning"
+
+\end_inset
+
 QueueManager Main Positioning Algorithm
 \end_layout
 
@@ -1460,6 +1496,12 @@ When a taxi driver sets himself as available the system is alerted and checks
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:QueueManager-Main-Distribution-P"
+
+\end_inset
+
 QueueManager Main Distribution-Prevision Algorithm
 \end_layout
 
@@ -1495,6 +1537,12 @@ Each time a ride is set the system registers that information with the place
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:RideManager-Main-Ride-creatingù"
+
+\end_inset
+
 RideManager Main Ride-creating Algorithm
 \end_layout
 
@@ -1542,6 +1590,12 @@ Every time a request is created the system starts this algorithm to try
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:RideManager-main-Reservation-han"
+
+\end_inset
+
 RideManager main Reservation-handling Algorithm
 \end_layout
 
@@ -2917,6 +2971,106 @@ name "chap:Requirement's-Traceability"
 \end_inset
 
 Requirement's Traceability
+\end_layout
+
+\begin_layout Section
+Registration and Login
+\end_layout
+
+\begin_layout Standard
+These requirements can be retreived in the subsection 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Login"
+
+\end_inset
+
+ of the Runtime view, that explain how the login works, whereas the correctness
+ of the data for registration and login are checked by the Security Manager
+ component( susbection 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Security-Manager"
+
+\end_inset
+
+of the Component view.
+\end_layout
+
+\begin_layout Section
+User side taxi reuqest, sharing, reservation
+\end_layout
+
+\begin_layout Standard
+These other requirements can be retreived in subsection 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Shared-request"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Reservation"
+
+\end_inset
+
+of the Runtime view.
+ Furthermore it can be seen in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:RideManager-main-Reservation-han"
+
+\end_inset
+
+ and
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:RideManager-main-Reservation-han"
+
+\end_inset
+
+how it works in a deeper way for the user side.
+ The grap
+\end_layout
+
+\begin_layout Section
+Taxi driver side and notifications
+\end_layout
+
+\begin_layout Standard
+These requirements can be retreived as in the previous section but in addition
+ see the subsection 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Availability-Management"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Queue management
+\end_layout
+
+\begin_layout Standard
+These requirements can be retreived in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:QueueManager-Main-Distribution-P"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:QueueManager-Main-Positioning"
+
+\end_inset
+
+, that show how the S2B guarantees the fair management of the queue required.
 \end_layout
 
 \begin_layout Chapter
