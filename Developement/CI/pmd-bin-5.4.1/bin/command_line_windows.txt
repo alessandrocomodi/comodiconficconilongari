@@ -1,0 +1,6 @@
+C:\Users\stefano\Documenti\github\comodiconficconilongari\Developement\CI\pmd-bi
+n-5.4.1\bin>pmd.bat -d ..\..\WebdavServlet.java -f html -R java-basic,java-j2ee,
+java-naming,java-finalizers,java-empty,java-controversial,java-comments,java-cod
+esize,java-design,java-clone,java-imports,java-braces,java-unusedcode,java-unnec
+essary,java-clone,java-typeresolution,java-strings,java-strictexception > prova.
+html
