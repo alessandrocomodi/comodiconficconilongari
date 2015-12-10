@@ -1,0 +1,164 @@
+    /**
+     * Copy a resource.
+     *
+     * @param req Servlet request
+     * @param resp Servlet response
+     * @return boolean true if the copy is successful
+     */
+    private boolean copyResource(HttpServletRequest req,
+                                 HttpServletResponse resp)
+        throws ServletException, IOException {
+
+        // Parsing destination header
+
+        String destinationPath = req.getHeader("Destination");
+
+        if (destinationPath == null) {
+            resp.sendError(WebdavStatus.SC_BAD_REQUEST);
+            return false;
+        }
+
+        // Remove url encoding from destination
+        destinationPath = RequestUtil.urlDecode(destinationPath, "UTF8");
+
+        int protocolIndex = destinationPath.indexOf("://");
+        if (protocolIndex >= 0) {
+            // if the Destination URL contains the protocol, we can safely
+            // trim everything upto the first "/" character after "://"
+            int firstSeparator =
+                destinationPath.indexOf("/", protocolIndex + 4);
+            if (firstSeparator < 0) {
+                destinationPath = "/";
+            } else {
+                destinationPath = destinationPath.substring(firstSeparator);
+            }
+        } else {
+            String hostName = req.getServerName();
+            if (hostName != null && destinationPath.startsWith(hostName)) {
+                destinationPath = destinationPath.substring(hostName.length());
+            }
+
+            int portIndex = destinationPath.indexOf(":");
+            if (portIndex >= 0) {
+                destinationPath = destinationPath.substring(portIndex);
+            }
+
+            if (destinationPath.startsWith(":")) {
+                int firstSeparator = destinationPath.indexOf("/");
+                if (firstSeparator < 0) {
+                    destinationPath = "/";
+                } else {
+                    destinationPath =
+                        destinationPath.substring(firstSeparator);
+                }
+            }
+        }
+
+        // Normalise destination path (remove '.' and '..')
+        destinationPath = RequestUtil.normalize(destinationPath);
+
+        String contextPath = req.getContextPath();
+        if (contextPath != null &&
+            destinationPath.startsWith(contextPath)) {
+            destinationPath = destinationPath.substring(contextPath.length());
+        }
+
+        String pathInfo = req.getPathInfo();
+        if (pathInfo != null) {
+            String servletPath = req.getServletPath();
+            if (servletPath != null &&
+                destinationPath.startsWith(servletPath)) {
+                destinationPath = destinationPath
+                    .substring(servletPath.length());
+            }
+        }
+
+        if (debug > 0)
+            log("Dest path :" + destinationPath);
+
+        if (destinationPath.toUpperCase(Locale.ENGLISH).startsWith("/WEB-INF") ||
+            destinationPath.toUpperCase(Locale.ENGLISH).startsWith("/META-INF")) {
+            resp.sendError(WebdavStatus.SC_FORBIDDEN);
+            return false;
+        }
+
+        String path = getRelativePath(req);
+
+        if (path.toUpperCase(Locale.ENGLISH).startsWith("/WEB-INF") ||
+            path.toUpperCase(Locale.ENGLISH).startsWith("/META-INF")) {
+            resp.sendError(WebdavStatus.SC_FORBIDDEN);
+            return false;
+        }
+
+        if (destinationPath.equals(path)) {
+            resp.sendError(WebdavStatus.SC_FORBIDDEN);
+            return false;
+        }
+
+        // Parsing overwrite header
+
+        boolean overwrite = true;
+        String overwriteHeader = req.getHeader("Overwrite");
+
+        if (overwriteHeader != null) {
+            if ("T".equalsIgnoreCase(overwriteHeader)) {
+                overwrite = true;
+            } else {
+                overwrite = false;
+            }
+        }
+
+        // Overwriting the destination
+
+        boolean exists = true;
+        try {
+            resources.lookup(destinationPath);
+        } catch (NamingException e) {
+            exists = false;
+        }
+
+        if (overwrite) {
+
+            // Delete destination resource, if it exists
+            if (exists) {
+                if (!deleteResource(destinationPath, req, resp, true)) {
+                    return false;
+                }
+            } else {
+                resp.setStatus(WebdavStatus.SC_CREATED);
+            }
+
+        } else {
+
+            // If the destination exists, then it's a conflict
+            if (exists) {
+                resp.sendError(WebdavStatus.SC_PRECONDITION_FAILED);
+                return false;
+            }
+
+        }
+
+        // Copying source to destination
+
+        Hashtable<String,Integer> errorList = new Hashtable<String,Integer>();
+
+        boolean result = copyResource(resources, errorList,
+                                      path, destinationPath);
+
+        if (!result || !errorList.isEmpty()) {
+
+            sendReport(req, resp, errorList);
+            return false;
+
+        }
+
+        // Copy was successful
+        resp.setStatus(WebdavStatus.SC_CREATED);
+        
+        // Removing any lock-null resource which would be present at
+        // the destination path
+        lockNullResources.remove(destinationPath);
+
+        return true;
+
+    }

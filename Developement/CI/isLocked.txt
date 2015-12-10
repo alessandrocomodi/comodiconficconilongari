@@ -1,0 +1,25 @@
+ /**
+     * Check to see if a resource is currently write locked. The method
+     * will look at the "If" header to make sure the client
+     * has give the appropriate lock tokens.
+     *
+     * @param req Servlet request
+     * @return boolean true if the resource is locked (and no appropriate
+     * lock token has been found for at least one of the non-shared locks which
+     * are present on the resource).
+     */
+    private boolean isLocked(HttpServletRequest req) {
+
+        String path = getRelativePath(req);
+
+        String ifHeader = req.getHeader("If");
+        if (ifHeader == null)
+            ifHeader = "";
+
+        String lockTokenHeader = req.getHeader("Lock-Token");
+        if (lockTokenHeader == null)
+            lockTokenHeader = "";
+
+        return isLocked(path, ifHeader + lockTokenHeader);
+
+    }
