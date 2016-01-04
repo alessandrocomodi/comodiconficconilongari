@@ -173,10 +173,19 @@ Functional role of assigned class, methods
 \end_layout
 
 \begin_layout Standard
-The assigned class is a servlet, which is a Java applet and helps the interactio
-n with the server.
- It offers many services in order to let the application work via the web
- and handles the http requests and responses.
+The class assigned, as says its own name, is a WebDAV servlet.
+ 
+\end_layout
+
+\begin_layout Standard
+A Web Distributed Authoring and Versioning (WebDAV) is an extension of the
+ Hypertext Transfer Protocol (HTTP) that allows clients to perform remote
+ Web content authoring operations.
+ This servlet provides some functionalities thanks to which a user can create,
+ move and change documents on a server.
+ The most important features of the WebDAV protocol include the maintenance
+ of properties about an author or modification date, namespace management,
+ collections, and overwrite protection.
 \end_layout
 
 \begin_layout Section
