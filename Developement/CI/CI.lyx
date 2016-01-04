@@ -3,13 +3,16 @@
 \begin_document
 \begin_header
 \textclass book
+\begin_preamble
+\usepackage{babel}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
+\font_roman lmodern
 \font_sans default
 \font_typewriter default
 \font_math auto
@@ -26,7 +29,16 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry false
 \use_package amsmath 1
@@ -60,6 +72,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\listings_params "language=Java,numbers=left,tabsize=2,showspaces=false,showtabs=false,breaklines=true,showstringspaces=false,breakatwhitespace=true,commentstyle={\color{green}},keywordstyle={\color{blue}},stringstyle={\color{red}},basicstyle={\ttfamily\tiny},moredelim={[il][\textcolor{grey}]{$$}},moredelim={[is][\textcolor{grey}]{\%\%}{\%\%}}"
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -121,6 +134,11 @@ LatexCommand tableofcontents
 Class, methods assigned
 \end_layout
 
+\begin_layout Standard
+The block of code assigned is included in only one class and regards in
+ particular three methods, which will be shown below.
+\end_layout
+
 \begin_layout Itemize
 Name of the class: WebdavServlet
 \end_layout
@@ -154,20 +172,459 @@ copyResource( HttpServletRequest req , HttpServletResponse resp ), starting
 Functional role of assigned class, methods
 \end_layout
 
+\begin_layout Standard
+The assigned class is a servlet, which is a Java applet and helps the interactio
+n with the server.
+ It offers many services in order to let the application work via the web
+ and handles the http requests and responses.
+\end_layout
+
+\begin_layout Section
+Role of assigned methods
+\end_layout
+
+\begin_layout Standard
+Below will be presented a short explanation of the functional role of the
+ assigned pieces of code.
+\end_layout
+
+\begin_layout Itemize
+doUnlock( HttpServletRequest req , HttpServletResponse resp ), starting
+ at line 1420: 
+\begin_inset Newline newline
+\end_inset
+
+This method, as says its name, unlocks a resource that was previously locked
+ with the use of the 
+\begin_inset Quotes eld
+\end_inset
+
+doLock
+\begin_inset Quotes erd
+\end_inset
+
+ method, which is situated just before the 
+\begin_inset Quotes eld
+\end_inset
+
+doUnlock
+\begin_inset Quotes erd
+\end_inset
+
+.
+ If the request is locked or if the resource is a readOnly, the doUnlock
+ returns without doing any change.
+ Otherwise it starts to remove all the resource locks and inheritable collection
+ locks, sending, in the end, a Status Code which informs the success of
+ the operation.
+\end_layout
+
+\begin_layout Itemize
+isLocked( String path , String ifHeader ), starting at line 1538:
+\begin_inset Newline newline
+\end_inset
+
+This method checks whether a resource in a certain path is currently 
+\begin_inset Quotes eld
+\end_inset
+
+write locked
+\begin_inset Quotes erd
+\end_inset
+
+ and, if so, it returns true.
+\end_layout
+
+\begin_layout Itemize
+copyResource( HttpServletRequest req , HttpServletResponse resp ), starting
+ at line 1596:
+\begin_inset Newline newline
+\end_inset
+
+This method offers the possibility to copy a resource from a source to a
+ destination.
+ In case the copy fails the method returns 
+\begin_inset Quotes eld
+\end_inset
+
+false
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+true
+\begin_inset Quotes erd
+\end_inset
+
+ otherwise.
+\end_layout
+
 \begin_layout Chapter
 List of issues found by applying the checklist
 \end_layout
 
-\begin_layout Section
-Method doUnlock
+\begin_layout Standard
+In this chapter will be anaylized the various issues of the methods and
+ the class previously described.
 \end_layout
 
 \begin_layout Section
-Method isLocked
+Code to be inspected
+\end_layout
+
+\begin_layout Standard
+Below there is the code present in the three assigned methods that have
+ been inspected.
+\end_layout
+
+\begin_layout Subsection
+doUnlock
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{firstnumber=1417}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "doUnlock.txt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+isLocked
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{firstnumber=1529}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "isLocked1.txt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+copyResource
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{firstnumber=1589}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "copyResource.txt"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Method copyResource
+Checklist
+\end_layout
+
+\begin_layout Standard
+In this section will be presented the application of the checklist.
+\end_layout
+
+\begin_layout Subsection
+Naming Conventions
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Meaningful variable, constant, class and methods names: 
+\emph default
+All the names of variables, methods and classes have meaningful names.
+ Often are used some abbreviations (like “resp” or “req”) which are used
+ locally in each method, but it does not influence the readability and understan
+ding of the code.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+One-character variables: 
+\emph default
+In the given methods there are no single-character variables.
+ They are present though in the class, but they are used as temporary variables.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Class names: 
+\emph default
+All the class names present in the file are written in the correct format.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Interface names: 
+\emph default
+There are no interfaces used in the given methods.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Method names: 
+\emph default
+All the methods present in the class are correctly named, except the method
+ “service” at line 365, which is not a verb.
+ It would be better if it is called “getService()”.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Class attributes: 
+\emph default
+All class variables follow the naming conventions.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Constant names: 
+\emph default
+All the constants follow the naming conventions.
+\end_layout
+
+\begin_deeper
+\begin_layout Subsection
+Indention
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\emph on
+Spaces for indention: 
+\emph default
+All the given methods use the indention correctly with the constant use
+ of four spaces.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Use of tabs: 
+\emph default
+No tabs are used for indention purposes.
+\end_layout
+
+\begin_deeper
+\begin_layout Subsection
+Braces
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\emph on
+Consistent use of braces style: 
+\emph default
+In the given code there is a consistent use of the “Kernighan and Ritchie”
+ style.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+11.
+ All if, do-while, try-catch have braces even with only one statement:
+\emph default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+In method “isLocked” there is a violation of the rule at line 1554, 1557,
+ 1575 and 1578.
+ The four if statements are not surrounded with braces.
+\end_layout
+
+\begin_layout Enumerate
+In method “doUnlock” there is a violation of the rule at line 1436.
+ The if statement is not surrounded with braces.
+\end_layout
+
+\begin_layout Enumerate
+In method “copyResource” there is a violation of the rule at line 1664.
+ The if statement is not surrounded with braces.
+\end_layout
+
+\begin_layout Subsection
+File organization
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\emph on
+Separation using comments and Blank lines: 
+\emph default
+There is a good use of blank lines and comments in order to highlight important
+ sections of the code making it more readable.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Line length: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+In method “copyResource” lines 1667, 1668 exceed the maximum length of 80
+ columns because of the long condition of the if.
+ These lines do arrive at 83 columns of length, which is still acceptable.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\emph on
+Line length exceeds ( >=120 ): 
+\emph default
+All the previous lines that exceed the 80 columns limit do not exceed the
+ 120 columns length.
+\end_layout
+
+\begin_deeper
+\begin_layout Subsection
+Wrapping lines
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\emph on
+Line breaks after comma or operator: 
+\emph default
+All the line breaks that occur follow the rule.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Higher-level breaks: 
+\emph default
+No issues found.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Statements alignment: 
+\emph default
+All the statements are correctly aligned.
+\end_layout
+
+\begin_deeper
+\begin_layout Subsection
+Comments
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\emph on
+Adequate use of comments: 
+\emph default
+All the methods include comments which are useful in the understanding of
+ the code.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Method 
+\begin_inset Quotes eld
+\end_inset
+
+doUnlock
+\begin_inset Quotes erd
+\end_inset
+
+ has meaningless JavaDoc comment before the declaration which gives no clues
+ on how the method works (line 1418)
+\end_layout
+
+\begin_layout Enumerate
+Method 
+\begin_inset Quotes eld
+\end_inset
+
+copyResource
+\begin_inset Quotes erd
+\end_inset
+
+ has a JavaDoc comment which is too generic and gives no hint on how the
+ method works (line 1590)
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\emph on
+Commented code: 
+\emph default
+There is no commented code.
 \end_layout
 
 \begin_layout Chapter
