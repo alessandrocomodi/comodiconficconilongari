@@ -1,0 +1,58 @@
+    /**
+     * Check to see if a resource is currently write locked.
+     *
+     * @param path Path of the resource
+     * @param ifHeader "If" HTTP header which was included in the request
+     * @return boolean true if the resource is locked (and no appropriate
+     * lock token has been found for at least one of the non-shared locks which
+     * are present on the resource).
+     */
+    private boolean isLocked(String path, String ifHeader) {
+
+        // Checking resource locks
+
+        LockInfo lock = resourceLocks.get(path);
+        Enumeration<String> tokenList = null;
+        if (lock != null && lock.hasExpired()) {
+            resourceLocks.remove(path);
+        } else if (lock != null) {
+
+            // At least one of the tokens of the locks must have been given
+
+            tokenList = lock.tokens.elements();
+            boolean tokenMatch = false;
+            while (tokenList.hasMoreElements()) {
+                String token = tokenList.nextElement();
+                if (ifHeader.indexOf(token) != -1)
+                    tokenMatch = true;
+            }
+            if (!tokenMatch)
+                return true;
+
+        }
+
+        // Checking inheritable collection locks
+
+        Enumeration<LockInfo> collectionLocksList = collectionLocks.elements();
+        while (collectionLocksList.hasMoreElements()) {
+            lock = collectionLocksList.nextElement();
+            if (lock.hasExpired()) {
+                collectionLocks.removeElement(lock);
+            } else if (path.startsWith(lock.path)) {
+
+                tokenList = lock.tokens.elements();
+                boolean tokenMatch = false;
+                while (tokenList.hasMoreElements()) {
+                    String token = tokenList.nextElement();
+                    if (ifHeader.indexOf(token) != -1)
+                        tokenMatch = true;
+                }
+                if (!tokenMatch)
+                    return true;
+
+            }
+        }
+
+        return false;
+
+    }
