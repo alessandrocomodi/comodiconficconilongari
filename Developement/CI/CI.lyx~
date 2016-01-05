@@ -635,12 +635,10 @@ Commented code:
 There is no commented code.
 \end_layout
 
-\begin_deeper
-\begin_layout Subsection
-Java source files
+\begin_layout Enumerate
+JAVA SOURCE FILES
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
 
 \emph on
@@ -678,12 +676,10 @@ The Javadoc for the doUnlock method is inconsistent and gives no informations
  All the others are complete.
 \end_layout
 
-\begin_deeper
-\begin_layout Subsection
-Package and import statements
+\begin_layout Enumerate
+PACKAGE AND IMPORT STATEMENTS
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
 
 \emph on
@@ -694,12 +690,10 @@ If any package statements are needed, they should be the first non-comment
 No issues found.
 \end_layout
 
-\begin_deeper
-\begin_layout Subsection
-Class and interface declarations
+\begin_layout Enumerate
+CLASS AND INTERFACE DECLARATIONS
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
 
 \emph on
@@ -829,11 +823,11 @@ At line 2366 there is a method, parseLockNullProperties, that is about 250
  
 \end_layout
 
-\begin_layout Subsection
-Initialization and declarations
+\end_deeper
+\begin_layout Enumerate
+INITIALIZATION AND DECLARATIONS
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
 
 \emph on
@@ -894,12 +888,10 @@ In copyResource, doUnlock and isLocked more than once we find the declaration
  
 \end_layout
 
-\begin_deeper
-\begin_layout Subsection
-Method calls
+\begin_layout Enumerate
+METHOD CALLS
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
 
 \emph on
@@ -926,12 +918,10 @@ Supposing that the names of variables and methods called are significative,
  all return values are used properly.
 \end_layout
 
-\begin_deeper
-\begin_layout Subsection
-Arrays
+\begin_layout Enumerate
+ARRAYS
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
 
 \emph on

@@ -636,8 +636,8 @@ There is no commented code.
 \end_layout
 
 \begin_deeper
-\begin_layout Subsection
-Java source files
+\begin_layout Subsection*
+3.2.7 Java source files
 \end_layout
 
 \end_deeper
@@ -695,8 +695,8 @@ No issues found.
 \end_layout
 
 \begin_deeper
-\begin_layout Subsection
-Class and interface declarations
+\begin_layout Subsection*
+3.2.9 Class and interface declarations
 \end_layout
 
 \end_deeper
@@ -829,8 +829,8 @@ At line 2366 there is a method, parseLockNullProperties, that is about 250
  
 \end_layout
 
-\begin_layout Subsection
-Initialization and declarations
+\begin_layout Subsection*
+3.2.10 Initialization and declarations
 \end_layout
 
 \end_deeper
@@ -895,8 +895,8 @@ In copyResource, doUnlock and isLocked more than once we find the declaration
 \end_layout
 
 \begin_deeper
-\begin_layout Subsection
-Method calls
+\begin_layout Subsection*
+3.2.11 Method calls
 \end_layout
 
 \end_deeper
@@ -927,8 +927,8 @@ Supposing that the names of variables and methods called are significative,
 \end_layout
 
 \begin_deeper
-\begin_layout Subsection
-Arrays
+\begin_layout Subsection*
+3.2.12 Arrays
 \end_layout
 
 \end_deeper
