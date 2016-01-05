@@ -495,8 +495,7 @@ In the given code there is a consistent use of the “Kernighan and Ritchie”
 \begin_layout Enumerate
 
 \emph on
-11.
- All if, do-while, try-catch have braces even with only one statement:
+All if, do-while, try-catch have braces even with only one statement:
 \emph default
  
 \end_layout
@@ -634,6 +633,327 @@ copyResource
 Commented code: 
 \emph default
 There is no commented code.
+\end_layout
+
+\begin_deeper
+\begin_layout Subsection
+Object Comparison
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\shape italic
+Check that all objects (including Strings) are compared with "equals" and
+ not with "==": 
+\shape default
+All comparison occur in the right way.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Method 
+\begin_inset Quotes eld
+\end_inset
+
+doUnlock
+\begin_inset Quotes erd
+\end_inset
+
+ has a comparison with 
+\begin_inset Quotes eld
+\end_inset
+
+==
+\begin_inset Quotes erd
+\end_inset
+
+, but it is a check if the object is instantiated (line 1436)
+\end_layout
+
+\begin_layout Enumerate
+Method 
+\begin_inset Quotes eld
+\end_inset
+
+copyResource
+\begin_inset Quotes erd
+\end_inset
+
+ has a comparison with 
+\begin_inset Quotes eld
+\end_inset
+
+==
+\begin_inset Quotes erd
+\end_inset
+
+, but it is a check if the object is instantiated (line 1604)
+\end_layout
+
+\begin_layout Subsection
+Output Format
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\shape italic
+Check that displayed output is free of spelling and grammatical errors:
+ 
+\shape default
+There is not output displayed in the methods assigned
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Check that error messages are comprehensive and provide guidance as to how
+ to correct the problem: 
+\shape default
+There is no error messages in the methods assigned
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Check that the output is formatted correctly in terms of line stepping and
+ spacing: 
+\shape default
+There is no output and neither error on formatting the output in the methods
+ assigned
+\end_layout
+
+\begin_deeper
+\begin_layout Subsection
+Computation, Comparisons and Assignments
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\shape italic
+Check that the implementation avoids “brutish programming: (see http://users.csc.c
+alpoly.edu/~jdalbey/SWE/CodeSmells/bonehead.html): 
+\shape default
+There are no 
+\begin_inset Quotes eld
+\end_inset
+
+brutish programming
+\begin_inset Quotes erd
+\end_inset
+
+ in the implementation
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Check order of computation/evaluation, operator precedence and parenthesizing:
+ 
+\shape default
+The order of computation, or evaluation, and operator precedence and parethesizi
+ng happen in the right way
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Check the liberal use of parenthesis is used to avoid operator precedence
+ problems: 
+\shape default
+The use of parethesis occurs in a right manner in the methods assigned
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Check that all denominators of a division are prevented from being zero:
+ 
+\shape default
+There are neither denominators possibly equal to zero, neither division
+ in the methods assigned
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Check that integer arithmetic, especially division, are used appropriately
+ to avoid causing unexpected truncation/rounding: 
+\shape default
+There are no integer arithmetic in the methods assigned
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Check that the comparison and Boolean operators are correct: 
+\shape default
+All comparisons and Boolean operators are correct in the methods assigned
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Check throw-catch expressions, and check that the error condition is actually
+ legitimate: 
+\shape default
+There is only one throw catch expression and the error condition is legitimate
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+In method 
+\begin_inset Quotes eld
+\end_inset
+
+copyResource
+\begin_inset Quotes erd
+\end_inset
+
+ the catch expression works because if there is no resource in the destination
+ path, it hasn't to delete nothing (line 1701)
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\shape italic
+Check that the code is free of any implicit type conversions: 
+\shape default
+There aren't conversions in the code, only decodification of something or
+ getter
+\end_layout
+
+\begin_deeper
+\begin_layout Subsection
+Exceptions
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\shape italic
+Check that the relevant exceptions are caught:
+\shape default
+ All relevant exception in the code are caught
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Check that the appropriate action are taken for each catch block:
+\shape default
+ For each catch block an appropriate action is taken
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+In method 
+\begin_inset Quotes eld
+\end_inset
+
+copyResource
+\begin_inset Quotes erd
+\end_inset
+
+ if a resource doesn't exist, the catch allows to take into account that
+ there isn't need of deletion (line 1701)
+\end_layout
+
+\begin_layout Subsection
+Flow of Control
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+I
+\shape italic
+n a switch statement, check that all cases are addressed by break or return:
+ 
+\shape default
+There aren't switch in the methods assigned
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Check that all switch statements have a default branch:
+\shape default
+ There aren't switch in the methods assigned
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Check that all loops are correctly formed, with the appropriate initialization,
+ increment and termination expressions: 
+\shape default
+All loops are correctly formed
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+In method 
+\begin_inset Quotes eld
+\end_inset
+
+doUnlock
+\begin_inset Quotes erd
+\end_inset
+
+ there are three loops and all are correctly formed (lines 1447,1466,1471)
+\end_layout
+
+\begin_layout Enumerate
+In method 
+\begin_inset Quotes eld
+\end_inset
+
+isLocked
+\begin_inset Quotes erd
+\end_inset
+
+ there are three loops and all are correctly formed (lines 1552,1565,1573)
+\end_layout
+
+\begin_layout Subsection
+Files
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\shape italic
+Check that all files are properly declared and opened: 
+\shape default
+There are no files in the methods assigned
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Check that all files are closed properly, even in the case of an error:
+ 
+\shape default
+There are no files in the methods assigned
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Check that EOF conditions are detected and handled correctly:
+\shape default
+ There are no files in the methods assigned
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Check that all file exceptions are caught and dealt with accordingly: 
+\shape default
+There are no files in the methods assigned
 \end_layout
 
 \begin_layout Chapter
