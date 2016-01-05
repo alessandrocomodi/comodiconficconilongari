@@ -581,7 +581,9 @@ No issues found.
 \emph on
 Statements alignment: 
 \emph default
-All the statements are correctly aligned.
+At line 1640 (copyResource method) the statement that occurs after the necessary
+ line break is not correctly aligned with the previous statement.
+ No other issues found
 \end_layout
 
 \begin_deeper
@@ -1056,8 +1058,11 @@ Computation, Comparisons and Assignments
 \begin_layout Enumerate
 
 \shape italic
-Check that the implementation avoids “brutish programming: (see http://users.csc.c
-alpoly.edu/~jdalbey/SWE/CodeSmells/bonehead.html): 
+Check that the implementation avoids “brutish programming:
+\begin_inset Newline newline
+\end_inset
+
+ (see http://users.csc.calpoly.edu/~jdalbey/SWE/CodeSmells/bonehead.html): 
 \shape default
 There are no 
 \begin_inset Quotes eld
@@ -1277,10 +1282,6 @@ Check that EOF conditions are detected and handled correctly:
 Check that all file exceptions are caught and dealt with accordingly: 
 \shape default
 There are no files in the methods assigned
-\end_layout
-
-\begin_layout Chapter
-Other problem highlighted
 \end_layout
 
 \begin_layout Chapter
