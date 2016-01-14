@@ -581,7 +581,9 @@ No issues found.
 \emph on
 Statements alignment: 
 \emph default
-All the statements are correctly aligned.
+At line 1640 (copyResource method) the statement that occurs after the necessary
+ line break is not correctly aligned with the previous statement.
+ No other issues found
 \end_layout
 
 \begin_deeper
@@ -635,10 +637,12 @@ Commented code:
 There is no commented code.
 \end_layout
 
-\begin_layout Enumerate
-JAVA SOURCE FILES
+\begin_deeper
+\begin_layout Subsection
+Java source files
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 
 \emph on
@@ -676,10 +680,12 @@ The Javadoc for the doUnlock method is inconsistent and gives no informations
  All the others are complete.
 \end_layout
 
-\begin_layout Enumerate
-PACKAGE AND IMPORT STATEMENTS
+\begin_deeper
+\begin_layout Subsection
+Package and import statements
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 
 \emph on
@@ -690,10 +696,12 @@ If any package statements are needed, they should be the first non-comment
 No issues found.
 \end_layout
 
-\begin_layout Enumerate
-CLASS AND INTERFACE DECLARATIONS
+\begin_deeper
+\begin_layout Subsection
+Class and interface declarations
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 
 \emph on
@@ -823,11 +831,11 @@ At line 2366 there is a method, parseLockNullProperties, that is about 250
  
 \end_layout
 
-\end_deeper
-\begin_layout Enumerate
-INITIALIZATION AND DECLARATIONS
+\begin_layout Subsection
+Initialization and declarations
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 
 \emph on
@@ -888,10 +896,12 @@ In copyResource, doUnlock and isLocked more than once we find the declaration
  
 \end_layout
 
-\begin_layout Enumerate
-METHOD CALLS
+\begin_deeper
+\begin_layout Subsection
+Method calls
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 
 \emph on
@@ -918,10 +928,12 @@ Supposing that the names of variables and methods called are significative,
  all return values are used properly.
 \end_layout
 
-\begin_layout Enumerate
-ARRAYS
+\begin_deeper
+\begin_layout Subsection
+Arrays
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 
 \emph on
@@ -1270,11 +1282,152 @@ There are no files in the methods assigned
 \end_layout
 
 \begin_layout Chapter
-Other problem highlighted
+Working hours & other info
 \end_layout
 
-\begin_layout Chapter
-Working hours & other info
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alessandro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Davide
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Stefano
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Code Inspection hours
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Total hours
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+56
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+58
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+54.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Used Tools
+\end_layout
+
+\begin_layout Itemize
+Sublime Text 3;
+\end_layout
+
+\begin_layout Itemize
+LyX and LaTeX;
+\end_layout
+
+\begin_layout Itemize
+GitHub.
 \end_layout
 
 \end_body
