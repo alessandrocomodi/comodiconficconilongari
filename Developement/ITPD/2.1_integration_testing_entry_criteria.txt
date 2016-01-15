@@ -1,0 +1,15 @@
+2.1
+The Integration Test is an important step for the verification and validation of the software developement, and, in order to complete it successfully there are several criterias that have to be met before the Integration Test starts.
+
+- All the Unit Tests of all the methods and functions of the entire software have been accurately done. All the bugs at the Unit Test stage must have been fixed and archived.
+
+- All the modules necessary to the Integration Test are availble and ready to be run.
+
+- The software is code-complete and fulfills all the requirements that have been specified in the RASD and DD. 
+
+- All the documentation about the project and the whole software is available to let the testers intervene and catch all the possible bugs that may rise, judging the correct behaviour of the various components among each other.
+
+- All the test cases are complete and well documented.
+
+- All the testing software needed to proceed with this step is correctly installed in the system and works properly.
+
