@@ -1,4 +1,4 @@
 The system can be divided in 3 big subsystem: a communication subsystem, an application subsystem and a data subsystem.
 The communication one is composed by the WebClient with the WebServer component, the Mobile Client and the ConnectionHandler. 
-On the other hand the QueueManager and the RideManager compund the application subsystem, while the DBMS and the DataAccessManager build the data subsystem.
-The first one and the third one are integrated through the SecurityManager, and all the subsystems should be integrated with the Application Controller component.
+On the other hand the QueueManager and the RideManager compound the application subsystem, while the DBMS and the DataAccessManager build the data subsystem.
+The first one and the third one are integrated through the SecurityManager, and all the subsystems must be integrated with the Application Controller component.
