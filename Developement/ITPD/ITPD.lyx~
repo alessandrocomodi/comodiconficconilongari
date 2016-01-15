@@ -130,6 +130,22 @@ Introduction
 Integration Strategy
 \end_layout
 
+\begin_layout Section
+Entry criteria
+\end_layout
+
+\begin_layout Section
+Elements to be integrated
+\end_layout
+
+\begin_layout Section
+Integration testing strategy
+\end_layout
+
+\begin_layout Section
+Sequence of component/function integration //TO_DECIDE
+\end_layout
+
 \begin_layout Chapter
 Individual Steps & Test Description
 \end_layout

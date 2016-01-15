@@ -134,12 +134,86 @@ Integration Strategy
 Entry criteria
 \end_layout
 
+\begin_layout Standard
+The Integration Test is an important step for the verification and validation
+ of the software developement, and, in order to complete it successfully
+ there are several criterias that have to be met before the Integration
+ Test starts.
+\end_layout
+
+\begin_layout Itemize
+All the Unit Tests of all the methods and functions of the entire software
+ have been accurately done.
+ All the bugs at the Unit Test stage must have been fixed and archived.
+\end_layout
+
+\begin_layout Itemize
+All the modules necessary to the Integration Test are availble and ready
+ to be run.
+\end_layout
+
+\begin_layout Itemize
+The software is code-complete and fulfills all the requirements that have
+ been specified in the RASD and DD.
+ 
+\end_layout
+
+\begin_layout Itemize
+All the documentation about the project and the whole software is available
+ to let the testers intervene and catch all the possible bugs that may rise,
+ judging the correct behaviour of the various components among each other.
+\end_layout
+
+\begin_layout Itemize
+All the test cases are complete and well documented.
+\end_layout
+
+\begin_layout Itemize
+All the testing software needed to proceed with this step is correctly installed
+ in the system and works properly.
+ 
+\end_layout
+
 \begin_layout Section
 Elements to be integrated
 \end_layout
 
+\begin_layout Standard
+The system can be divided in 3 big subsystems: a communication subsystem,
+ an application subsystem and a data subsystem.
+ The communication one is composed by the WebClient along with the WebServer
+ component, the Mobile Client and the Connection Handler.
+ On the other hand the QueueManager and the RideManager compose the application
+ subsystem, while the DBMS and the DataAccessManager are part of the data
+ subsystem.
+ The first and the third one are integrated through the SecurityManager,
+ and all the subsystems must be integrated with the Application Controller
+ component.
+\end_layout
+
 \begin_layout Section
 Integration testing strategy
+\end_layout
+
+\begin_layout Standard
+For the integration testing strategy we chose something in between a bottom-up
+ approach and a functional groupings one.
+ This has more than one reason as in the Top down approach we would have
+ had the advantage of being able to output part of the project before finishing
+ the testing of everything, something like a beta of our application that
+ wouldn't have had all the functionalities.
+ This however was not our objective, as given that the overall application
+ is not too complex, the time spent for testing is not enough to justify
+ a beta.
+ Therefore the bottom-up/functional groupings approach, that gives us other
+ advantages: first and most important is the parallel testing of the lower
+ modules, that can lower the overall testing time.
+ Also, the functional groupings strategy (with this we mean that we will
+ divide the project in functional subsystems and then test them bottom-up)
+ will allow us to test deeply the modules alone before putting them together,
+ assuring us the correct behaviour of each one, thing that would be harder
+ to do in a top down/non functional approach.
+ 
 \end_layout
 
 \begin_layout Section
