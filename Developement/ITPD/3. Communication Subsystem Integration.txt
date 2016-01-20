@@ -24,10 +24,10 @@ Environment Needed		Two stubs for the different kind of clients that send messag
 
 Test Case Identifier	 I1.4
 Components Involved 	 Connection Handeler --> Web Server, Mobile Client
-Input Specifications	 
-Purposes 				 The purposes of this test are:
-Output Specifications	 
-Environment Needed		 
+Input Specifications	 Typical messages forwarded by the Connection Handler
+Purposes 				 The purposes of this test is: the correct translation of the message by the Client components 
+Output Specifications	 The correct representation and visualization by the Client components
+Environment Needed		 A stub that generates random message from the Connection Handler, and other stubs for the Web Server and Mobile Client 
 
 
 
