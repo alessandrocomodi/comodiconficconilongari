@@ -1,0 +1,25 @@
+Introduction
+
+Revision History
+
+Version 1.0 -- First release of the document
+
+
+Purpose and Scope
+
+The Integration Test Plan Document (ITPD) is intended as a set of directives and guidelines on how to successfully test the interactions among the components described in the Design Document (DD). It includes the strategies and the various steps to be adopted and followed by the testers and developers.
+
+
+List of Definitions and Abbreviations
+
+There is no use of Abbreviations and no term needs specific definitions.
+
+
+Reference Documents
+
+The reference documents that have been used in order to redact the ITPD are :
+	-	RASD v1.0 (Requirements Analysis and Specifications Document);
+	-	DD v1.0 (Design Document);
+	-	Software Engineering 2 Project, AA 2015/2016 Assignments 4 – Test Plan;
+	-	//Possibili documenti usati da davide per il capitolo 4
+
