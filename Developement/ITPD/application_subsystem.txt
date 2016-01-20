@@ -1,0 +1,20 @@
+Test ID: I1
+Components Involved: 	Ride Manager --> Queue Manager
+Input Specifications: 	New ride request.
+Purpose:				Check if the ride manager asks and receives correctly to the Queue Manager a taxi driver to be allocated to the ride.
+Output Specifications:	The right taxi driver assigned.
+Environment Needed: 	In order to connect the Ride Manager with the Queue Manager a driver that simulates the Application Controller is needed. The Ride Manager and Queue Manager must be correctly implemented.
+
+Test ID: I2
+Components Involved:	Queue Manager --> Application Controller.
+Input Specifications: 	Record to be updated.
+Purpose: 				Check if the update requests coming from the Queue Manager (updating the queue, setting the driver allocations, ect.) are correctly implemented by the Application Controller.
+Output Specifications: 	Updated record.
+Environment Needed: 	Queue Manager and Application Controller are correctly implemented.
+
+Test ID: I3
+Components Involved:	Application Controller --> Ride Manager
+Input Specifications: 	Ride request to be passed to the Ride Manager.
+Purpose:				Check if the Ride Manager, given the request of a new ride from the Application Controller invokes the right methods in order to create a new ride.
+Output Specifications:	The new created ride.
+Environment Needed:		Tests I1 and I2 has to be successfully completed. Ride Manager and Application Controller correctly implemented.
