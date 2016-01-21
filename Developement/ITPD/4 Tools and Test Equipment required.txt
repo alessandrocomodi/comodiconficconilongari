@@ -1,0 +1,7 @@
+Mockito( Logo)
+
+We use the Mockito tool for the Interaction Testing: we want to verify and ensure that interaction between components happens and happens in the right way. If something in the implementation it's not as we expect and there is something that miss with this tool we're able to create stubs and check the interaction and the integration in a faster way.
+
+
+Arquillian (logo)
+We use Arquillian that provides an integration testing framework for containers: it allows to execute test cases inside and against the container and to let it manage the lifecycle of the containers and it is also an useful instrument to inject the Contexts and Dependecy Injection(CDI)  beans, Enterprise JavaBeans(EJB).
