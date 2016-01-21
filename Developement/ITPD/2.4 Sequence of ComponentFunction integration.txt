@@ -8,4 +8,6 @@ According to the strategy the integration test plan starts with three groups of 
 
 2.4.2 Subsystem Integration Sequence
 
-Each one of the groups of component described before can be seen as a subsystem. Therefore the subsystem integration sequence begins with an integration of the Communication susbsystem and the Application one. After this kind of merge we can integrate the big subsystem found before with the subsystem that concerns the Data part of the application. In the end we integrate all with the last two component the SecurityManager and we obtain a system completely integrated tested.
+The groups of component described before 
+
+The groups of component described before can be seen as a subsystem. Therefore the subsystem integration sequence begins with an integration of the Communication susbsystem and the Security Manager. After this kind of merge we integrate the previous subsystem with the subsystem that concerns the Data part of the application and the Application susbsystem. In this way we obtain a system that is completely integrated tested.
