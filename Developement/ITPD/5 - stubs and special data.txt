@@ -1,0 +1,14 @@
+As a Bottom-up strategy has been chosen there's no need for stubs of any kind, as the bottom components has already been tested and can be used without being in need of any stub. 
+
+We're going to need only one driver, for the connection between Ride and Queue manager. As a matter of fact as we're using a bottom-up approach we'll need to test the connections between those two managers before testing the Application controller, so we will need a Driver that fakes the operations done from the Application controller to the request from the Ride manager and forwards it to the Queue manager.
+
+Special test data are instead useful in more than one occasion:
+
+For the Application Subsystem there's the need for a fake ride request and some Taxi Drivers to test the connection between Ride and Queue manager. As the connection between DBMS and the two managers is not yet implemented, the Drivers and Rides will have to be implemented directly in the managers as they would appear after being requested to the DBMS.
+
+For the Data Subsystem there's the need for some fake information in the DBMS and a fake request from the Data Management System. As in the Application Subsystem the request will be implemented as it arrives from the Application controller.
+
+For the Communication Subsystem the need is for messages that go from the server to the clients, as for example in test I6 the server needs a fake message that will be translated by the mobile client. There's no need for special data from clients to server as everything can be called directly from an actual client.
+
+For the connection between the subsystems the necessity is for a fake request from the security manager to the Data subsystem and some data inserted in the DBMS, a fake request from the security manager to the application subsystem to do an action, another one from the application subsystem to the data one and last one from the application subsystem to the communication one to check the functionality of the latter one. 
+
