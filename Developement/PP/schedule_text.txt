@@ -1,0 +1,14 @@
+
+Introduction for the Teacher:
+	The following schedule starts at the developing point we actually are, so we take as granted the documents (RASD,DD,ITPD) we already did, even if the project plan should have been probably done before. This to say that to create the schedule we used all the information we had about testing and the developing order of the application. 
+
+Also, we want to clarify that the time spent before now is really excessive. The three months that passed represent the first one of the six for each person that we predicted with COCOMO II. 
+
+
+Schedule:
+In February we will start implementing the lower level components (Queue Manager, Ride Manager, Web Client, Mobile Manager and DBMS). As the two Managers are the core of the project they will be the components that will take the most of the time, so the developers working on the Clients and the DBMS will converge on the Manager as soon as they will have finished their parts. This part of the project should take about one month, after which these components will be tested (the Managers need the creation of the Driver for the application controller) possibly in the first half of March.
+
+The Middle level components (Application Controller, Data access Manager, Web Server and Connection Handler) should be finished in the first half of may, after which they will be tested. This parts should actually take about the same developing time so each developer should work only on one group of components.
+
+In the end, in the second part of May and until the end of June we will develop and test the Security Manager and integrate all the parts, finally being able to put the application online. 
+

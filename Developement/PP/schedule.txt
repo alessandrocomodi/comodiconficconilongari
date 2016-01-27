@@ -1,0 +1,59 @@
+Oct 2015	
+	w1 RASD + PP
+	w2 RASD + PP
+	w3 DD
+	w4 DD
+Nov 2015
+	w1 DD
+	w2 ITPD
+	w3 lower level components
+	w4 lower level components
+Dec 2015
+	w1 lower level components
+	w2 lower level components
+	w3 lower level components
+	w4 testing lower components + application driver + integration testing
+Gen 2016
+	w1 middle level components
+	w2 middle level components
+	w3 middle level components
+	w4 middle level components
+Feb 2016
+	w1 middle level components
+	w2 middle level components
+	w3 middle level components
+	w4 testing middle components + integration testing
+Mar 2016
+	w1 upper level components and subsystem linking
+	w2 upper level components and subsystem linking
+	w3 upper level components and subsystem linking
+	w4 upper level components and subsystem linking
+Apr 2016
+	w1 testing subsystems + integration testing 
+	w2 integration testing of all application
+	w3 ending
+	w4 ending
+
+
+
+RASD
+DD
+ITPD
+PP
+Queue Manager
+Ride Manager
+Application Controller Driver
+DBMS
+App Client
+Web Client
+Low Level Testing
+
+Web Server
+Connection Handler
+Application Controller
+Data Access Manager
+Mid Level Testing
+
+Subsystem linking
+Testing
+
