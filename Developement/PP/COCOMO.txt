@@ -24,5 +24,62 @@ Npeople = effort/Duration
 
 
 Scale Drivers
+ 
+ The COCOMO tool needs to define these parmaters to determine the exponent used in the Effort Equation. There are five Scale drivers, that are defined in table below: precedentness, development flexibilty, arcihtecture or risk resolution, team cohesion and process maturity.
+
+Tabella immagini
+
+Our organisation has a previous experience in project of this kind, the development process has normal degree of flexibility and our process can be seen at level 2 or 3 of CMMI. According to the Document COCOMO® II.2000.0 Model Manual v2.1 this brings us to set this value to Nominal, while the poor analysis of risk carry out a low value instead our team cohesion is high.
+
 
 Cost Drivers
+
+
+Cost Drivers are multiplicative factors that determine the EAF, a factor required in the computation of the effort, derived by the charts in COCOCMO® II.2000.0 Model Manual v2.1.
+As it can be seen in figure, in order to compute the effort through the tool we've set the Software Cost Drivers accordingly to the referenced document. We conform our experience to the definition in the document that brings us to this set of value for the Cost Drivers.
+For example the parameter Personnel Continuity is set to Very High due to the fact that our team is stable and not subject to change of people, while the Application Experience cost driver is set to Low because our team experience in develop application of this kind is lesser than one year.
+
+Prdouct
+Required Software Reliability
+Data Base Size
+Product Complexity
+Developed for Reusability
+Documentation Match to Lifecycle Needs
+
+Personnel
+
+Analyst Capability
+Programmer Capability
+Personnel Continuity
+Application Experience
+Platform Experience
+Language and Toolset Experience
+
+Platform
+
+Time Constraint
+Storage Constraint
+Platform Volatility
+
+Project
+Use of Software Tools
+Multisite Development
+Required Development Schedule
+
+
+E= B 0.01 *SF
+
+
+precedentness nominal 3,72
+flex nomin 3.04
+res low 5.65
+team very high 1.10
+maturity nominal 4.68
+
+E = 1,0919
+
+Duration 3,67 * (effort)^E = 88,77
+
+
+
+effort = 18,5
