@@ -1,0 +1,28 @@
+reference: COCOMO® II.2000.0 Model Manual v2.1 
+
+UFP to SLOC Conversion Ratios
+
+Language Default			SLOC / UFP
+C 				128 
+C++ 			55
+Java 			53
+
+
+
+
+SLOC = 53 * 107 = 5671
+KSLOC circa 5,7
+
+scale factor table pag 22
+
+Effort = 2,94 * EAF * (KSLOC)^E
+
+Duration = 3,67*(Effort)^E
+
+Npeople = effort/Duration
+
+
+
+Scale Drivers
+
+Cost Drivers
