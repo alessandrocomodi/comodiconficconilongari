@@ -127,11 +127,8 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-This document has the objective to evaluate the time and the resources necessary
- to the development of MyTaxiService through two approaches: first will
- be used the Function Points approach to estimate the size of the output
- project and then the CoCoMo approach mainly to study the time necessary
- to the development of the application.
+The chapter explains what this document is intended for and all the tools
+ in order to understand it in the correct way.
 \end_layout
 
 \begin_layout Section
@@ -139,7 +136,11 @@ Scope & Purpose
 \end_layout
 
 \begin_layout Standard
-
+This document has the objective to evaluate the time and the resources necessary
+ to the development of MyTaxiService through two approaches: first will
+ be used the Function Points approach to estimate the size of the output
+ project and then the COCOMO approach mainly to study the time necessary
+ to the development of the application.
 \end_layout
 
 \begin_layout Section
@@ -1645,14 +1646,21 @@ Thanks to the use of COCOMO II (COnstructive COst MOdel), using the SLOC
 \end_layout
 
 \begin_layout Standard
-In Figure 
+In Figures 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:COCOMO-output"
 
 \end_inset
 
- there is the output of COCOMO II.
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:COCOMO-II-output"
+
+\end_inset
+
+ there is the input and output of COCOMO II.
 \end_layout
 
 \begin_layout Standard
@@ -1682,8 +1690,88 @@ name "fig:COCOMO-output"
 
 \end_inset
 
+COCOMO II input
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/COCOMOinput.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:COCOMO-II-output"
+
+\end_inset
+
 COCOMO II output
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/COCOMOresult1.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/COCOMOresult2.png
+	display false
+	width 100line%
 
 \end_inset
 
