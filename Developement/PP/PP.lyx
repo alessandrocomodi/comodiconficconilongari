@@ -174,6 +174,18 @@ Function Points
 Project Effort and Cost Estimation
 \end_layout
 
+\begin_layout Subsection
+Scale Drivers
+\end_layout
+
+\begin_layout Subsection
+Cost Drivers
+\end_layout
+
+\begin_layout Subsection
+Effort Estimation
+\end_layout
+
 \begin_layout Chapter
 Project Schedules & Resources Allocation
 \end_layout
@@ -262,7 +274,7 @@ PP hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-10
+
 \end_layout
 
 \end_inset
@@ -271,7 +283,7 @@ PP hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-10
+
 \end_layout
 
 \end_inset
@@ -280,7 +292,7 @@ PP hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-120
+
 \end_layout
 
 \end_inset
@@ -300,7 +312,7 @@ Total hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-76
+66
 \end_layout
 
 \end_inset
@@ -309,7 +321,7 @@ Total hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-78
+68
 \end_layout
 
 \end_inset
@@ -318,7 +330,7 @@ Total hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-76.5
+66.5
 \end_layout
 
 \end_inset
