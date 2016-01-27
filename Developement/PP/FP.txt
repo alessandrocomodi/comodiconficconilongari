@@ -1,0 +1,31 @@
+	type		complexity
+ILF 24
+	users		simple(7)
+	taxi drivers	simple(7)
+	ride		medium(10)
+
+ELF 12
+	gps informations	medium(7)
+	maps		simple(5)
+
+EI 52
+	login/logout		simple(3)
+	create/delete ride 		medium(4)
+	create/delete/update reservation	medium(4)
+	accept/refuse ride	medium(4)
+	insert/update/delete user 			simple(3)
+	insert/update/delete taxi drivers 	simple(3)
+
+
+EIQ 13
+	user profile	low(3)
+	taxi driver profile		low(3)
+	ride history		medium(4)
+	notifications		low(3)
+
+EO
+
+
+FP
+
+FP = 101
