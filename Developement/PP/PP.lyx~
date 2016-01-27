@@ -126,20 +126,8 @@ LatexCommand tableofcontents
 Introduction
 \end_layout
 
-\begin_layout Standard
-This document has the objective to evaluate the time and the resources necessary
- to the development of MyTaxiService through two approaches: first will
- be used the Function Points approach to estimate the size of the output
- project and then the CoCoMo approach mainly to study the time necessary
- to the development of the application.
-\end_layout
-
 \begin_layout Section
 Scope & Purpose
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Section
