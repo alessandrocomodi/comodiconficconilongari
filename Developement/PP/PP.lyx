@@ -1791,12 +1791,179 @@ COCOMO II output
 Scale Drivers
 \end_layout
 
+\begin_layout Standard
+The COCOMO tool needs to define these parmaters to determine the exponent
+ used in the Effort Equation.
+ There are five Scale drivers, that are defined in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Scale-Drivers-Factor"
+
+\end_inset
+
+: precedentness, development flexibilty, arcihtecture or risk resolution,
+ team cohesion and process maturity
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Scale-Drivers-Factor"
+
+\end_inset
+
+Scale Drivers Factor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/Scale Factor.png
+	display false
+	width 100line%
+	rotateOrigin leftTop
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Our organisation has a previous experience in project of this kind, the
+ development process has normal degree of flexibility and our process can
+ be seen at level 2 or 3 of CMMI.
+ According to the Document COCOMO® II.2000.0 Model Manual v2.1 this brings
+ us to set this value to Nominal, while the poor analysis of risk carry
+ out a low value instead our team cohesion is high.
+\end_layout
+
 \begin_layout Subsection
 Cost Drivers
 \end_layout
 
+\begin_layout Standard
+Cost Drivers are multiplicative factors that determine the EAF, a factor
+ required in the computation of the effort, derived by the charts in COCOCMO®
+ II.2000.0 Model Manual v2.1.
+ As it can be seen in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:COCOMO-output"
+
+\end_inset
+
+, in order to compute the effort through the tool we've set the Software
+ Cost Drivers accordingly to the referenced document.
+ We conform our experience to the definition in the document that brings
+ us to this set of value for the Cost Drivers.
+\end_layout
+
+\begin_layout Standard
+For example the parameter Personnel Continuity is set to Very High due to
+ the fact that our team is stable and not subject to change of people, while
+ the Application Experience cost driver is set to Low because our team experienc
+e in develop application of this kind is lesser than one year.
+\end_layout
+
 \begin_layout Subsection
 Effort Estimation
+\end_layout
+
+\begin_layout Standard
+The effort estimation through COCOMO can be computed using the equation
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Effort-Equation"
+
+\end_inset
+
+: where EAF is the Effort Adjustment Factor derived by a product of the
+ Cost Drivers multipliers and E is the Exponent computed according to the
+ Model Manual procedure through Scale Drivers factor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Effort-Equation"
+
+\end_inset
+
+Effort Equation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/effort equation.png
+	display false
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We compute the effort with the tool on the CSSE site about COCOMO , as we
+ can see in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:COCOMO-II-output"
+
+\end_inset
+
+.
+ Despite the tool analysis our team is based on three people so we estimate
+ a duration of the project is about six months.
+ If we speculate a compensation of 1800 dollars/month and a project period
+ of 6 months, the project has a cost estimation of approximately 32K$ circa
+ .
 \end_layout
 
 \begin_layout Chapter
@@ -1965,7 +2132,7 @@ Text editors;
 \end_layout
 
 \begin_layout Itemize
-COCOMO II
+COCOMO II tool : http://csse.usc.edu/tools/COCOMOII.php
 \end_layout
 
 \begin_layout Itemize
